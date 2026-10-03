@@ -1,0 +1,267 @@
+[![Escribano cover](./assets/cover.png)](./assets/cover.png)
+
+# Escribano
+
+<p align="center">
+  <a href="#english"><img src="https://img.shields.io/badge/status-prototype-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: prototype"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-review--only-D7B698?style=for-the-badge&labelColor=07111A" alt="Review-only license"></a>
+  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-8%2F13-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 8 of 13"></a>
+  <a href="#english"><img src="https://img.shields.io/badge/agreement-written_before_code-E0C170?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
+  <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
+</p>
+
+<p align="center"><strong>A local record for every change to a fictional DAO's governing contract, with its receipt, its authorization trail, and its place in the version history.</strong></p>
+
+<p align="center">A public contract can tell you what the rule says today. It cannot, by itself, tell a new member who changed it, which approvals counted, or what the earlier version said.</p>
+
+<p align="center">This repository contains the agreement and review documents. It does not include the source code.</p>
+
+---
+
+<details>
+<summary><b>Read in English</b></summary>
+
+<a id="english"></a>
+
+**Escribano keeps a readable local record of each change to a fictional DAO's governing contract.**
+
+> **The unit is the change and its receipt: what changed, who authorized it, and how it follows the previous version.**
+
+### Why
+
+Imagine joining an organization after a difficult decision. You can find the current contract, but the person who kept the old copies has left. The document does not tell you which version came first, who approved the change, or why a proposal that lacked enough support was refused. A record that keeps only today's text leaves that explanation in someone's memory.
+
+Escribano explores a local, append-only history in which a contract change is treated as an event with an identifier and a receipt. The record is meant to let a reader follow the change back through earlier versions. The project is a software model of that form; it is not a legal register or a filing service.
+
+### If you are judging Find Your Way or Meridian, start here
+
+- Read the project foundation and its walkthrough. Start with [How it works](./docs/HOW_IT_WORKS.md).
+- Open the test record. See [Evidence](./docs/EVIDENCE.md).
+- Read the legal and verification limits. See [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
+- Review the publication conditions. See [Code not included](./CODE_NOT_INCLUDED.md) and the [review-only license](./LICENSE).
+
+### In one minute
+
+In a fictional DAO called La Fragua, a member proposes changing the contract's notice period. Bruna, Nilo, and Sabina are fictional members. The proposal does not change the contract by itself. Each person's authority must still be current and within its budget, expiry, and origin; the project counts distinct member identities toward its three-approval threshold. If support is short, the proposal stays pending. If the threshold is met, the intended flow records the change and a receipt in a local append-only file. A reader can then inspect the current version and walk back through the history. The names and scenario are invented for explanation, not evidence of a real organization or filing.
+
+### What it looks like in practice
+
+The source README documents a terminal walkthrough using fictional member names. These are the documented commands, not output reproduced from this public checkout:
+
+```sh
+node src/cli.js proponer c-1 plazo "60 dias"
+node src/cli.js firmar c-1 bruna
+node src/cli.js decidir c-1 bruna,nilo
+node src/cli.js firmar c-1 sabina
+node src/cli.js decidir c-1 bruna,nilo,sabina
+node src/cli.js estado
+node src/cli.js historial
+node src/cli.js auditar
+```
+
+The project rules say the first decision is short of the three-member threshold and leaves the proposal pending. The supplied test run records this actual failure detail when the implementation evaluates a missing-quorum case:
+
+```text
+missing 3 approvals (0 of 3)
+```
+
+That line is not the desired result. The test expected two counted approvals and one missing approval, so the mismatch is evidence of a current defect. The public repository has no source or test files with which to reproduce the terminal walkthrough.
+
+### Why Escribano
+
+| You need | What it gives you | Where it lives |
+|---|---|---|
+| To understand how the latest contract came to be | A proposed history of changes, receipts, and earlier versions in a local append-only record | [How it works](./docs/HOW_IT_WORKS.md) |
+| To see which people counted toward a change | A model that counts distinct members with current authority, not repeated attestations from one identity | [How it works](./docs/HOW_IT_WORKS.md) |
+| To know why authority is bounded | Rules for budget, expiry, origin, delegation, and revocation | [How it works](./docs/HOW_IT_WORKS.md) |
+| To distinguish a record check from proof of identity | A separate verification model, with the limits of an unkeyed digest explained | [Legal and limits](./docs/LEGAL_AND_LIMITS.md) |
+| To see what was tested and what failed | Test names, the 8/13 snapshot, and the specific kernel and adversarial failures | [Evidence](./docs/EVIDENCE.md) |
+
+### How it works
+
+```text
+member proposes a contract change
+              |
+              v
+check authority, limits, and distinct approvals
+       |                         |
+threshold not met                threshold met
+       |                         |
+       v                         v
+proposal stays pending     append local entry + receipt
+                                   |
+                       current version + full history
+                                   |
+                     separate verifier checks the record
+```
+
+| Actor | Rights in the model | Limits |
+|---|---|---|
+| Proposer | Any member can propose a change. | A proposal is not an approval and does not change the contract. |
+| Members | A member with current authority can attest to a proposal. | Membership alone is not authority. Attestations are fictional and local, not cryptographic signatures. |
+| Authorization giver | Grants, delegates, or revokes authority with a budget, expiry, and origin. | Delegation can only reduce authority. Revocation affects future changes and does not erase accepted history. |
+| Verifier | Recalculates from the stored record separately from the execution report. | It checks the supplied local data; it does not establish identity, truth, or legal effect. |
+| Reader | Reads the current state and full history without special authority. | Reading does not grant power to change the contract. |
+
+The illustrated flow uses three distinct approvals. That threshold is a project design choice. The cited Wyoming provisions do not set a multiple-signature requirement for changing a contract.
+
+### What it is not
+
+Escribano is not a legal filing, a legal register, a deployed smart contract, a DAO service, a cryptographic signature system, a blockchain anchor, or legal advice. Its people and approvals are fictional local attestations. Its receipt digest cannot prove who wrote a record or when it existed.
+
+### Evidence you can open
+
+The supplied run dated 2026-10-03 reports **8 passing tests out of 13; 5 fail**. Four of five kernel-boundary checks pass. The fifth finds that the installed `continuity.js` digest differs from the digest fixed by the project. Because Escribano pins the kernel it expects, that mismatch makes the pin test fail until someone deliberately reviews and updates the expected digest.
+
+Four of the eight adversarial assertions pass: altered-history detection, expired authorization, delegated-budget limits, and leaving an under-quorum proposal pending. Four fail: the missing-quorum detail, revoked-member detail, identical-change idempotency, and reading an older version. The phase record says all eight cases were written and observed failing before implementation. See the exact test names and recorded outcomes in [Evidence](./docs/EVIDENCE.md).
+
+The public checkout contains no test files or source code, so this snapshot cannot be rerun here. The 8/13 result describes this run; it does not establish a finished or ready-to-use product.
+
+### Escribano, Vespi, and Lore Plugin
+
+Escribano consumes Vespi's kernel and the agreement says it does not modify it. The documented design uses the kernel's authority checks, operation receipts, verification separate from execution, and continuity reconstructed from the record. Lore Plugin supplies the installed project context from which Escribano's kernel copy was selected. The current public checkout does not include code for an independent inspection of those integrations. [Vespi](https://github.com/andresanemic/vespi) is the kernel project; [Lore Plugin](https://github.com/andresanemic/lore-plugin) provides the host context described by the agreement.
+
+### What it does not do, and what is not verified
+
+Escribano does not submit documents to Wyoming, amend filed articles, confer DAO status, create a legal entity, deploy a contract, write to a blockchain, or produce a deposit with legal effect. The agreement cites Wyoming W.S. 17-31 as a reference for the shape of a record with an identifier and update history. It does not claim legal compliance. The project has not been compared with an actual filing process or reviewed by a competent legal professional.
+
+The records and member names are synthetic. Approvals are local attestations, not cryptographic signatures. SHA-256 is unkeyed: someone who can rewrite the local file can recalculate its digest, so it does not prove authenticity or time of creation. There is no blockchain or testnet anchor; the receipt anchor is described as `pending`. The kernel pin needs review, four adversarial assertions fail in the supplied run, and readiness for use is not established. More detail is in [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
+
+### How to review this project
+
+Start with the agreement's model and the walkthrough in [How it works](./docs/HOW_IT_WORKS.md). Compare intended behavior with the recorded results in [Evidence](./docs/EVIDENCE.md), then read [Legal and limits](./docs/LEGAL_AND_LIMITS.md) and [Code not included](./CODE_NOT_INCLUDED.md). Today this repository contains documentation rather than source code. The code is intended to open during the judges' review period under the [review-only license](./LICENSE), whose terms govern reading and evaluation.
+
+### Author
+
+**Andrés Peña**, repository authority: `andresanemic`.
+
+[<img src="./assets/icons/v2/telegram.svg" width="28" alt="Telegram">](https://t.me/andresanemic) &nbsp;&nbsp; [<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/icons/v2/x-dark.svg"><img src="./assets/icons/v2/x.svg" width="28" alt="X"></picture>](https://x.com/andresanemic) &nbsp;&nbsp; [<img src="./assets/icons/v2/linkedin.svg" width="28" alt="LinkedIn">](https://www.linkedin.com/in/andresanemic/)
+
+---
+
+[How it works](./docs/HOW_IT_WORKS.md) · [Evidence](./docs/EVIDENCE.md) · [Legal and limits](./docs/LEGAL_AND_LIMITS.md) · [Code not included](./CODE_NOT_INCLUDED.md) · [Review-only license](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
+
+</details>
+
+<details>
+<summary><b>Leer en español</b></summary>
+
+**Escribano conserva un registro local y legible de cada cambio al contrato rector de una DAO ficticia.**
+
+> **La unidad es el cambio y su recibo: qué cambió, quién lo autorizó y cómo sigue a la versión anterior.**
+
+### Por qué
+
+Imagina que te incorporas a una organización después de una decisión difícil. Encuentras el contrato vigente, pero la persona que guardaba las copias anteriores ya no está. El documento no te dice qué versión fue primero, quién aprobó el cambio ni por qué se rechazó una propuesta que no tenía suficiente apoyo. Si solo se conserva el texto de hoy, esa explicación queda en la memoria de alguien.
+
+Escribano explora un historial local append-only en el que cada cambio del contrato se trata como un evento con identificador y recibo. El registro busca que quien lo lea pueda seguir el cambio hacia atrás, hasta las versiones anteriores. Es un modelo de software para esa forma de registro, no un registro legal ni un servicio de presentación.
+
+### Si estás evaluando Find Your Way o Meridian, empieza aquí
+
+- Lee la base del proyecto y su recorrido. Empieza por [Cómo funciona](./docs/HOW_IT_WORKS.md).
+- Abre el registro de pruebas. Consulta [Evidencia](./docs/EVIDENCE.md).
+- Lee los límites jurídicos y de verificación. Consulta [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md).
+- Revisa las condiciones de publicación. Consulta [Código no incluido](./CODE_NOT_INCLUDED.md) y la [licencia de solo revisión](./LICENSE).
+
+### En un minuto
+
+En una DAO ficticia llamada La Fragua, una persona propone cambiar el plazo de aviso del contrato. Bruna, Nilo y Sabina son miembros ficticios. La propuesta no cambia el contrato por sí sola. La autoridad de cada persona debe seguir vigente y respetar su presupuesto, vencimiento y origen; para el umbral de tres aprobaciones del proyecto cuentan identidades distintas. Si falta apoyo, la propuesta queda pendiente. Si se alcanza el umbral, el flujo previsto registra el cambio y un recibo en un archivo local append-only. Después, cualquiera puede revisar la versión actual y recorrer el historial hacia atrás. Los nombres y el caso son inventados para explicar el modelo, no son evidencia de una organización o presentación real.
+
+### Cómo se ve en la práctica
+
+El README fuente documenta un recorrido de terminal con nombres de miembros ficticios. Estos son los comandos documentados, no una salida reproducida desde esta copia pública:
+
+```sh
+node src/cli.js proponer c-1 plazo "60 dias"
+node src/cli.js firmar c-1 bruna
+node src/cli.js decidir c-1 bruna,nilo
+node src/cli.js firmar c-1 sabina
+node src/cli.js decidir c-1 bruna,nilo,sabina
+node src/cli.js estado
+node src/cli.js historial
+node src/cli.js auditar
+```
+
+Las reglas del proyecto indican que la primera decisión no alcanza el umbral de tres miembros y deja la propuesta pendiente. La corrida de pruebas proporcionada registra este detalle de fallo cuando la implementación evalúa un caso sin quórum:
+
+```text
+missing 3 approvals (0 of 3)
+```
+
+Esa línea no es el resultado esperado. La prueba esperaba dos aprobaciones contadas y una pendiente, por lo que la diferencia muestra un defecto actual. El repositorio público no incluye el código ni las pruebas para repetir aquí el recorrido de terminal.
+
+### Por qué Escribano
+
+| Necesitas | Qué te da | Dónde vive |
+|---|---|---|
+| Entender cómo se llegó al contrato vigente | Un historial propuesto de cambios, recibos y versiones anteriores en un registro local append-only | [Cómo funciona](./docs/HOW_IT_WORKS.md) |
+| Ver quién contó para un cambio | Un modelo que cuenta miembros distintos con autoridad vigente, no varias atestaciones de una identidad | [Cómo funciona](./docs/HOW_IT_WORKS.md) |
+| Saber qué límites tiene la autoridad | Reglas de presupuesto, vencimiento, origen, delegación y revocación | [Cómo funciona](./docs/HOW_IT_WORKS.md) |
+| Distinguir una revisión del registro de una prueba de identidad | Un modelo de verificación separado y los límites de un digest sin clave | [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) |
+| Saber qué se probó y qué falló | Nombres de pruebas, la fotografía 8/13 y los fallos concretos del núcleo y los casos adversariales | [Evidencia](./docs/EVIDENCE.md) |
+
+### Cómo funciona
+
+```text
+un miembro propone un cambio al contrato
+               |
+               v
+revisar autoridad, límites y aprobaciones distintas
+       |                          |
+no alcanza el umbral              alcanza el umbral
+       |                          |
+       v                          v
+queda pendiente             agregar entrada local + recibo
+                                      |
+                         versión actual + historial completo
+                                      |
+                      verificador aparte revisa el registro
+```
+
+| Actor | Derechos en el modelo | Límites |
+|---|---|---|
+| Quien propone | Cualquier miembro puede proponer un cambio. | Proponer no es aprobar ni cambia el contrato. |
+| Miembros | Quien tiene autoridad vigente puede atestiguar una propuesta. | Ser miembro no basta para tener autoridad. Las atestaciones son ficticias y locales, no firmas criptográficas. |
+| Persona que otorga autorizaciones | Otorga, delega o revoca autoridad con presupuesto, vencimiento y origen. | Delegar solo puede reducir autoridad. Revocar afecta cambios futuros y no borra el historial aceptado. |
+| Verificador | Recalcula desde el registro almacenado, por separado del informe de ejecución. | Comprueba los datos locales recibidos; no establece identidad, verdad ni efecto legal. |
+| Lector | Lee el estado actual y el historial completo sin autoridad especial. | Leer no concede poder para cambiar el contrato. |
+
+El flujo ilustrado usa tres aprobaciones distintas. Ese umbral es una decisión de diseño del proyecto. Los artículos de Wyoming citados no establecen un requisito de varias firmas para cambiar un contrato.
+
+### Qué no es
+
+Escribano no es una presentación legal, un registro jurídico, un contrato inteligente desplegado, un servicio DAO, un sistema de firmas criptográficas, un anclaje en blockchain ni asesoría jurídica. Sus personas y aprobaciones son atestaciones locales ficticias. El digest del recibo no puede probar quién escribió el registro ni cuándo existía.
+
+### Evidencia que puedes abrir
+
+La corrida proporcionada del 2026-10-03 informa **8 pruebas aprobadas de 13; 5 fallan**. Pasan cuatro de las cinco comprobaciones de frontera del núcleo. La quinta detecta que el digest instalado de `continuity.js` no coincide con el digest fijado por el proyecto. Escribano fija el núcleo que espera, así que esa prueba falla hasta que alguien revise deliberadamente y actualice el digest esperado.
+
+Pasan cuatro de las ocho aserciones adversariales: detección de historial alterado, autorización vencida, límites de presupuesto delegado y mantener pendiente una propuesta sin quórum. Fallan cuatro: el detalle del quórum insuficiente, el detalle del miembro revocado, la idempotencia de un cambio repetido y la lectura de una versión anterior. El registro de fases dice que los ocho casos se escribieron y se observaron fallar antes de implementar. [Evidencia](./docs/EVIDENCE.md) conserva sus nombres y resultados registrados.
+
+La copia pública no incluye los archivos de pruebas ni el código, así que no se puede repetir aquí esta corrida. El resultado 8/13 describe esa ejecución; no demuestra que el producto esté terminado ni listo para usarse.
+
+### Escribano, Vespi y Lore Plugin
+
+Escribano consume el núcleo de Vespi y, según el acuerdo, no lo modifica. El diseño documentado usa las comprobaciones de autoridad del núcleo, recibos de operaciones, verificación separada de la ejecución y continuidad reconstruida desde el registro. Lore Plugin aporta el contexto instalado del que se seleccionó la copia del núcleo. La copia pública actual no incluye código para inspeccionar esas integraciones por cuenta propia. [Vespi](https://github.com/andresanemic/vespi) es el proyecto del núcleo; [Lore Plugin](https://github.com/andresanemic/lore-plugin) aporta el contexto de hosts descrito en el acuerdo.
+
+### Qué no hace y qué no está verificado
+
+Escribano no presenta documentos en Wyoming, no enmienda artículos depositados, no confiere condición de DAO, no crea una persona jurídica, no despliega contratos, no escribe en una blockchain ni produce un depósito con efecto legal. El acuerdo cita Wyoming W.S. 17-31 como referencia para la forma de un registro con identificador e historial de actualizaciones. No afirma cumplimiento legal. El proyecto no se ha comparado con un proceso real de presentación ni lo ha revisado una persona competente en derecho.
+
+Los registros y nombres de miembros son sintéticos. Las aprobaciones son atestaciones locales, no firmas criptográficas. SHA-256 no usa una clave: quien pueda reescribir el archivo local también puede recalcular su digest, por lo que no prueba autenticidad ni fecha de creación. No hay anclaje en blockchain ni testnet; el anclaje del recibo figura como `pending`. El pin del núcleo requiere revisión, cuatro aserciones adversariales fallaron en la corrida proporcionada y no se ha establecido que el proyecto esté listo para usarse. Hay más detalle en [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md).
+
+### Cómo revisar el proyecto
+
+Empieza por el modelo del acuerdo y el recorrido de [Cómo funciona](./docs/HOW_IT_WORKS.md). Compara el comportamiento previsto con los resultados registrados en [Evidencia](./docs/EVIDENCE.md), y luego lee [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) y [Código no incluido](./CODE_NOT_INCLUDED.md). Hoy este repositorio contiene documentación, no código fuente. Está previsto abrir el código durante el periodo de revisión de los jueces bajo la [licencia de solo revisión](./LICENSE), que establece las condiciones de lectura y evaluación.
+
+### Autor
+
+**Andrés Peña**, autoridad del repositorio: `andresanemic`.
+
+[<img src="./assets/icons/v2/telegram.svg" width="28" alt="Telegram">](https://t.me/andresanemic) &nbsp;&nbsp; [<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/icons/v2/x-dark.svg"><img src="./assets/icons/v2/x.svg" width="28" alt="X"></picture>](https://x.com/andresanemic) &nbsp;&nbsp; [<img src="./assets/icons/v2/linkedin.svg" width="28" alt="LinkedIn">](https://www.linkedin.com/in/andresanemic/)
+
+---
+
+[Cómo funciona](./docs/HOW_IT_WORKS.md) · [Evidencia](./docs/EVIDENCE.md) · [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) · [Código no incluido](./CODE_NOT_INCLUDED.md) · [Licencia de solo revisión](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
+
+</details>
