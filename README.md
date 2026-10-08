@@ -8,7 +8,7 @@
   <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-8%2F13-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 8 of 13"></a>
   <a href="#english"><img src="https://img.shields.io/badge/agreement-written_before_code-E0C170?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
-  <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_candidate-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 candidate (commit ed559e8)"></a>
+  <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_release-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 release (commit ed559e8)"></a>
 </p>
 
 <p align="center"><strong>A local record for every change to a fictional DAO's governing contract, with its receipt, its authorization trail, and its place in the version history.</strong></p>
@@ -112,7 +112,7 @@ Escribano is not a legal filing, a legal register, a deployed smart contract, a 
 
 ### Evidence you can open
 
-The supplied run dated 2026-10-03 reports **8 passing tests out of 13; 5 fail**. Four of five kernel-boundary checks pass. The fifth finds that the installed `continuity.js` digest differs from the digest fixed by the project. Because Escribano pins the kernel it expects, that mismatch makes the pin test fail until someone deliberately reviews and updates the expected digest. The project targets kernel **0.1.5 candidate** (commit `ed559e8`); the re-pinned digest table will be committed once the kernel release is confirmed.
+The supplied run dated 2026-10-03 reports **8 passing tests out of 13; 5 fail**. Four of five kernel-boundary checks pass. The fifth finds that the installed `continuity.js` digest differs from the digest fixed by the project. Because Escribano pins the kernel it expects, that mismatch makes the pin test fail until someone deliberately reviews and updates the expected digest. The project targets kernel **0.1.5 release** (commit `ed559e8`); the digest table remains pending until a deliberate project re-pin and fresh tests are completed.
 
 Four of the eight adversarial assertions pass: altered-history detection, expired authorization, delegated-budget limits, and leaving an under-quorum proposal pending. Four fail: the missing-quorum detail, revoked-member detail, identical-change idempotency, and reading an older version. The phase record says all eight cases were written and observed failing before implementation. See the exact test names and recorded outcomes in [Evidence](./docs/EVIDENCE.md).
 
@@ -235,7 +235,7 @@ Escribano no es una presentación legal, un registro jurídico, un contrato inte
 
 ### Evidencia que puedes abrir
 
-La corrida proporcionada del 2026-10-03 informa **8 pruebas aprobadas de 13; 5 fallan**. Pasan cuatro de las cinco comprobaciones de frontera del núcleo. La quinta detecta que el digest instalado de `continuity.js` no coincide con el digest fijado por el proyecto. Escribano fija el núcleo que espera, así que esa prueba falla hasta que alguien revise deliberadamente y actualice el digest esperado. El proyecto apunta al kernel **0.1.5 candidato** (commit `ed559e8`); la tabla de digest fijada se commiteará una vez confirmado el release del kernel.
+La corrida proporcionada del 2026-10-03 informa **8 pruebas aprobadas de 13; 5 fallan**. Pasan cuatro de las cinco comprobaciones de frontera del núcleo. La quinta detecta que el digest instalado de `continuity.js` no coincide con el digest fijado por el proyecto. Escribano fija el núcleo que espera, así que esa prueba falla hasta que alguien revise deliberadamente y actualice el digest esperado. El proyecto apunta al kernel **0.1.5 publicado** (commit `ed559e8`); la tabla de digest sigue pendiente hasta que se refije deliberadamente el proyecto y se repitan las pruebas.
 
 Pasan cuatro de las ocho aserciones adversariales: detección de historial alterado, autorización vencida, límites de presupuesto delegado y mantener pendiente una propuesta sin quórum. Fallan cuatro: el detalle del quórum insuficiente, el detalle del miembro revocado, la idempotencia de un cambio repetido y la lectura de una versión anterior. El registro de fases dice que los ocho casos se escribieron y se observaron fallar antes de implementar. [Evidencia](./docs/EVIDENCE.md) conserva sus nombres y resultados registrados.
 
