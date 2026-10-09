@@ -138,9 +138,6 @@ Start with the agreement's model and the walkthrough in [How it works](./docs/HO
 <details>
 <summary><b>Leer en español</b></summary>
 
-<p align="center"><b>Escribano</b> — un contrato público muestra la regla de hoy, no quién la cambió ni qué aprobaciones contaron.<br>
-Cada cambio se comprueba aparte y queda registro. Evidencia: 13/13 pruebas. Datos ficticios. Wyoming Statutes Title 17, Chapter 31 como referencia de diseño.</p>
-
 **Escribano conserva un registro local y legible de cada cambio al contrato rector de una DAO ficticia.**
 
 > **La unidad es el cambio y su recibo: qué cambió, quién lo autorizó y cómo sigue a la versión anterior.**
