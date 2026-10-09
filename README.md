@@ -11,6 +11,10 @@
   <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_release-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 release (commit ed559e8)"></a>
 </p>
 
+<p align="center"><strong>Public contract, private logjam.</strong> The delay between a promise and its fulfillment, with no way to explain who authorized it: a real public contract only reaches today's text, and Escribano makes the version history of a fictional DAO consultable, with its receipt and its authorization trail, showing 13 of 13 tests passing in the 2026-10-09 run. It is not a register, nor proof of identity, nor a thing with legal effect; this checkout holds only the agreement and review documents, without source code.</p>
+
+<p align="center"><strong>Contrato público, atasco privado.</strong> El retraso entre una promesa y su cumplimiento, sin forma de explicar quién lo autorizó: un contrato público real solo llega hasta el texto vigente, y Escribano deja consultar el historial de versiones de una DAO ficticia, con su recibo y su rastro de autorizaciones, con evidencia de 13 de 13 pruebas aprobadas en la corrida del 2026-10-09. No es un registro, ni prueba de identidad, ni efecto jurídico; esta copia solo contiene el acuerdo y los documentos de revisión, sin código fuente.</p>
+
 <p align="center"><strong>A local record for every change to a fictional DAO's governing contract, with its receipt, its authorization trail, and its place in the version history.</strong></p>
 
 <p align="center">A public contract can tell you what the rule says today. It cannot, by itself, tell a new member who changed it, which approvals counted, or what the earlier version said.</p>
