@@ -23,7 +23,7 @@ The agreement is explicit that Wyoming W.S. 17-31 does **not** require multiple 
 - The member approvals are fictional local attestations. There are no cryptographic keys and no proof that a real person controls a member name.
 - SHA-256 detects certain changes only when checked against the supplied record; because it is unkeyed, someone who can rewrite the file can recalculate it. It does not prove authenticity or time of creation.
 - There is no blockchain, testnet, explorer, or on-chain anchor. The receipt anchor remains `pending`.
-- The public repository does not contain source code today. The current suite reports 8/13, re-pinning the kernel is pending, and no assertion of product readiness is made.
+- The public repository does not contain source code today. The 2026-10-09 run reports 13 tests, all passing, and no assertion of product readiness is made.
 - The project has not been checked against an actual Wyoming filing process. What would be required for a real organization to amend filed articles remains outside the evidence supplied here.
 - The agreement leaves the name and terminal interface as choices that Andrés may revisit before a jury sees them; other forms such as web, desktop, or mobile are not promised.
 
@@ -52,6 +52,6 @@ El acuerdo es explícito: Wyoming W.S. 17-31 **no exige** varias firmas para cam
 - Las aprobaciones de miembros son atestaciones locales ficticias. No hay claves criptográficas ni prueba de que una persona real controle el nombre de un miembro.
 - SHA-256 detecta ciertos cambios solo al compararlo con el registro recibido; como no usa una clave, quien pueda reescribir el archivo también puede recalcularlo. No prueba autenticidad ni fecha de creación.
 - No hay blockchain, testnet, explorador ni anclaje en cadena. El anclaje del recibo queda `pending`.
-- El repositorio público hoy no incluye código fuente. La suite actual informa 8/13, la re-fijación del núcleo está pendiente y no se afirma que el producto esté listo.
+- El repositorio público hoy no incluye código fuente. La corrida del 2026-10-09 informa 13 pruebas, todas aprobadas, y no se afirma que el producto esté listo.
 - El proyecto no se ha contrastado con un proceso real de presentación en Wyoming. Qué necesitaría una organización real para enmendar artículos presentados queda fuera de la evidencia disponible.
 - El acuerdo deja abiertos el nombre y la interfaz de terminal, que Andrés puede reconsiderar antes de que los vea un jurado; no promete otras formas como web, escritorio o móvil.

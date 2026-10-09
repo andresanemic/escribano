@@ -2,11 +2,13 @@
 
 ## Current result
 
-The supplied run dated 2026-10-03 reports **8 passing tests out of 13 and 5 failures**. The public repository does not contain the test files or source code, so the run cannot be repeated from this checkout.
+The supplied run dated 2026-10-09 reports **13 tests, all passing and none skipped** on Node v24.15.0. The capture, kept at [`suite-2026-10-09.txt`](./suite-2026-10-09.txt), is the reference for these counts and these test names. The public repository does not contain the test files or source code, so the run cannot be repeated from this checkout.
 
-The five failures are one kernel digest check and four adversarial assertions. The pin expects `continuity.js` to match its earlier fixed SHA-256 digest, but the installed copy has a different digest. This is the kernel pin: it records the exact kernel cut the project was written against. A moved digest does not prove the newer file is incorrect; it means the project has not reviewed and deliberately accepted that changed file. Keeping the check red until that decision is made prevents an unnoticed kernel change from being treated as the approved boundary.
+The run executed `node --test test/*.test.js` in a clean clone of the private project with an empty HOME and no network. The kernel is Vespi 0.1.5, commit `ed559e83c976dd6e6a379a5510db776206f670b4`, copied into the project at `vendor/vespi-kernel`; the kernel-boundary checks compare that copy against its `SOURCE.md`, module by module and commit by commit.
 
-The other four failures are behavioral mismatches: the missing-quorum detail, the revoked-member detail, repeated identical-change behavior, and reading an earlier version. The observed output and the assertion's expected behavior are kept distinct below.
+### Why the earlier capture was red
+
+The earlier capture, dated 2026-10-03, was red because the project was pinned to an older kernel cut (0.1.3). That re-pin is now done: this run checks the vendored 0.1.5 copy against its own `SOURCE.md`, and every check in it passes. The earlier result is kept here as history; it is not the current state.
 
 ## The 13 tests
 
@@ -14,48 +16,50 @@ The other four failures are behavioral mismatches: the missing-quorum detail, th
 
 | Test name | Result | What the supplied run shows |
 |---|---|---|
-| `la copia del núcleo que Escribano consume está instalada, no es el árbol de desarrollo` | Pass | The consumed copy is the installed copy. |
-| `el núcleo es el corte fijado, módulo por módulo` | Fail | `continuity.js` differs from the fixed digest. |
-| `los cinco encabezados declaran el mismo commit fijado` | Pass | All five headers report the fixed commit. |
-| `el SOURCE.md instalado declara los mismos cinco módulos que este proyecto espera` | Pass | The declared module list matches the expected modules. |
+| `la copia del núcleo que Escribano consume es la vendorizada, y solo esa` | Pass | The consumed copy is the vendored copy, not the development tree. |
+| `el núcleo es el corte fijado, módulo por módulo` | Pass | Each module's digest matches the cut fixed for the vendored copy. |
+| `los ocho encabezados declaran el mismo commit fijado` | Pass | All eight headers declare the same fixed commit. |
+| `el SOURCE.md vendido declara los mismos ocho módulos que este proyecto espera` | Pass | The vendored `SOURCE.md` declares the eight modules the project expects. |
 | `lo que el núcleo exporta es lo que este proyecto usa, y existe` | Pass | The expected exports exist. |
 
 ### Adversarial cases
 
-The project phase record says these eight cases were written and each was observed failing before implementation. The current run passes four assertions and fails four.
+The project phase record says these eight cases were written first and each was observed red before implementation. In this run, all eight assertions pass.
 
 | Test name | Result | What the supplied run shows |
 |---|---|---|
-| `1. un cambio sin quórum no entra, y vuelve con la salida que lo dice` | Fail | Actual detail: `missing 3 approvals (0 of 3)`. The assertion expects `missing 1 approval (2 of 3)`. |
-| `2. la firma de un miembro revocado no cuenta, y el rechazo lo nombra` | Fail | The observed detail again reports `missing 3 approvals (0 of 3)` where the assertion expects two of three counted. |
-| `3. el mismo cambio dos veces es un cambio: una entrada, el mismo sello` | Fail | The assertion expected a founding entry plus one change, but observed one entry. |
-| `4. un historial alterado a mano rompe la cadena y la auditoría lo dice` | Pass | The assertion detects the hand-altered history. |
-| `5. con una versión nueva, la versión vieja se lee igual y se dice que no es la vigente` | Fail | The assertion expected current version 2 but observed version 1. |
-| `6. con el reloj vencido la autorización se niega, y dice cuándo venció` | Pass | The assertion observes the expired authorization being denied with its expiry detail. |
-| `7. un miembro no autoriza por encima de su presupuesto delegado` | Pass | The assertion observes the delegated budget limit. |
-| `8. un cambio que nunca alcanza las firmas queda pendiente, con su motivo` | Pass | The assertion observes an under-quorum proposal staying pending. |
+| `1. un cambio sin quórum no entra, y vuelve con la salida que lo dice` | Pass | A change without quorum does not enter, and the refusal carries the output that says so. |
+| `2. la firma de un miembro revocado no cuenta, y el rechazo lo nombra` | Pass | A revoked member's attestation does not count, and the refusal names them. |
+| `3. el mismo cambio dos veces es un cambio: una entrada, el mismo sello` | Pass | The same change twice is one change: a single entry, the same seal. |
+| `4. un historial alterado a mano rompe la cadena y la auditoría lo dice` | Pass | A hand-altered history breaks the chain, and the audit reports it. |
+| `5. con una versión nueva, la versión vieja se lee igual y se dice que no es la vigente` | Pass | With a newer version, the older version reads the same and is reported as not current. |
+| `6. con el reloj vencido la autorización se niega, y dice cuándo venció` | Pass | With an expired clock, authorization is denied and the expiry is stated. |
+| `7. un miembro no autoriza por encima de su presupuesto delegado` | Pass | A member does not authorize above their delegated budget. |
+| `8. un cambio que nunca alcanza las firmas queda pendiente, con su motivo` | Pass | A change that never reaches the signatures stays pending, with its reason. |
 
-These results describe what the assertions observed on the supplied host and kernel version. They do not establish that Escribano is ready for use. The source code and test files are not in this public repository.
+These results describe what the assertions observed in the supplied run of 2026-10-09 against the vendored Vespi 0.1.5 copy. They cover only the behavior these cases exercise; they do not establish that Escribano is ready for use. The source code and test files are not in this public repository.
 
 ## What the earlier project phase establishes
 
-The project phase record states that the written agreement preceded implementation, the eight adversarial cases were written first and observed failing, and a complete terminal walkthrough was built. It also records the installed kernel cut as Lore Plugin 2.4.9-rc.5, candidate kernel 0.1.3, commit `54c20c7`, with five module digests fixed by the project tests. The supplied current run now reports that the `continuity.js` digest differs from the expected value. These are project phase records, not source artifacts that can be independently inspected in this checkout.
+The project phase record states that the written agreement preceded implementation, the eight adversarial cases were written first and observed red, and a complete terminal walkthrough was built. It also records the kernel cut installed at that time (Lore Plugin 2.4.9-rc.5, candidate kernel 0.1.3) with module digests fixed by the project tests; the 2026-10-03 capture was red against that cut, and the project has since re-pinned to 0.1.5. These are project phase records, not source artifacts that can be independently inspected in this checkout.
 
-The nine Vespi projects with code were recorded as built against cut `54c20c7` on 2026-09-29, with green suites at that cut. That historical record does not mean their suites are green against the installed kernel today. No Escribano testnet transactions or chain receipts are claimed.
+The nine Vespi projects with code were recorded as built against that same earlier cut on 2026-09-29, with green suites at that cut. That historical record does not mean their suites are green against the installed kernel today. No Escribano testnet transactions or chain receipts are claimed.
 
 ## Rerunning when code opens
 
-The package manifest defines the test command as `node --test "test/*.test.js"`, and the source README documents the same suite command. The project says it has no dependencies to install and requires Node.js 18 or later. The code is intended to open during the judges' review period under the review-only license. These instructions are for that future code checkout; they cannot be run from this documentation-only repository.
+The package manifest defines the test command as `node --test "test/*.test.js"`, and the source README documents the same suite command. The project says it has no dependencies to install and requires Node.js 18 or later; the supplied run used Node v24.15.0. The code is intended to open during the judges' review period under the review-only license. When that checkout exists, the suite should report the same count as the reference capture in [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 tests, all passing, none skipped. These instructions are for that future code checkout; they cannot be run from this documentation-only repository.
 
 ## Español
 
 ### Resultado actual
 
-La corrida proporcionada del 2026-10-03 informa **8 pruebas aprobadas de 13 y 5 fallidas**. El repositorio público no incluye los archivos de prueba ni el código fuente, por lo que no se puede repetir desde esta copia.
+La corrida proporcionada del 2026-10-09 informa **13 pruebas: 13 aprobadas, 0 omitidas** sobre Node v24.15.0. La captura, guardada en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt), es la referencia de estos conteos y de estos nombres de prueba. El repositorio público no incluye los archivos de prueba ni el código fuente, por lo que no se puede repetir desde esta copia.
 
-Los cinco fallos son una comprobación del digest del núcleo y cuatro aserciones adversariales. El pin espera que `continuity.js` coincida con un digest SHA-256 fijado antes, pero la copia instalada tiene otro digest. Este es el pin del núcleo: registra el corte exacto contra el que se escribió el proyecto. Un digest distinto no demuestra que el archivo nuevo sea incorrecto; significa que el proyecto aún no revisó y aceptó deliberadamente ese archivo. Mantener la comprobación en rojo hasta tomar esa decisión evita tratar un cambio de núcleo inadvertido como si fuera una frontera aprobada.
+La corrida ejecutó `node --test test/*.test.js` en un clon limpio del proyecto privado, con HOME vacío y sin red. El núcleo es Vespi 0.1.5, commit `ed559e83c976dd6e6a379a5510db776206f670b4`, copiado dentro del proyecto en `vendor/vespi-kernel`; las comprobaciones de frontera comparan esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit.
 
-Los otros cuatro fallos son diferencias de comportamiento: el detalle del quórum insuficiente, el detalle del miembro revocado, el comportamiento ante cambios idénticos repetidos y la lectura de una versión anterior. La salida observada y el comportamiento esperado por la aserción se distinguen a continuación.
+### Por qué la captura anterior estaba en rojo
+
+La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3). Esa re-fijación ya está hecha: esta corrida comprueba la copia vendorizada de 0.1.5 contra su propio `SOURCE.md`, y todas las comprobaciones pasan. El resultado anterior se conserva como historial; no es el estado actual.
 
 ### Las 13 pruebas
 
@@ -63,35 +67,35 @@ Los otros cuatro fallos son diferencias de comportamiento: el detalle del quóru
 
 | Nombre de la prueba | Resultado | Qué muestra la corrida proporcionada |
 |---|---|---|
-| `la copia del núcleo que Escribano consume está instalada, no es el árbol de desarrollo` | Pasa | La copia consumida es la instalada. |
-| `el núcleo es el corte fijado, módulo por módulo` | Falla | `continuity.js` tiene un digest distinto al fijado. |
-| `los cinco encabezados declaran el mismo commit fijado` | Pasa | Los cinco encabezados informan el commit fijado. |
-| `el SOURCE.md instalado declara los mismos cinco módulos que este proyecto espera` | Pasa | La lista declarada de módulos coincide con los módulos esperados. |
+| `la copia del núcleo que Escribano consume es la vendorizada, y solo esa` | Pasa | La copia consumida es la vendorizada, no el árbol de desarrollo. |
+| `el núcleo es el corte fijado, módulo por módulo` | Pasa | Cada módulo coincide con el corte fijado para la copia vendorizada. |
+| `los ocho encabezados declaran el mismo commit fijado` | Pasa | Los ocho encabezados declaran el mismo commit fijado. |
+| `el SOURCE.md vendido declara los mismos ocho módulos que este proyecto espera` | Pasa | El `SOURCE.md` vendido declara los ocho módulos que el proyecto espera. |
 | `lo que el núcleo exporta es lo que este proyecto usa, y existe` | Pasa | Existen las exportaciones esperadas. |
 
 #### Casos adversariales
 
-El registro de fases del proyecto dice que los ocho casos se escribieron y se observaron fallar antes de implementar. La corrida actual aprueba cuatro aserciones y falla cuatro.
+El registro de fases del proyecto dice que los ocho casos se escribieron primero y se observaron en rojo antes de implementar. En esta corrida, las ocho aserciones pasan.
 
 | Nombre de la prueba | Resultado | Qué muestra la corrida proporcionada |
 |---|---|---|
-| `1. un cambio sin quórum no entra, y vuelve con la salida que lo dice` | Falla | Detalle observado: `missing 3 approvals (0 of 3)`. La aserción espera `missing 1 approval (2 of 3)`. |
-| `2. la firma de un miembro revocado no cuenta, y el rechazo lo nombra` | Falla | El detalle observado vuelve a informar `missing 3 approvals (0 of 3)` cuando la aserción espera que cuenten dos de tres. |
-| `3. el mismo cambio dos veces es un cambio: una entrada, el mismo sello` | Falla | La aserción esperaba una entrada fundacional y un cambio, pero observó una entrada. |
-| `4. un historial alterado a mano rompe la cadena y la auditoría lo dice` | Pasa | La aserción detecta el historial alterado a mano. |
-| `5. con una versión nueva, la versión vieja se lee igual y se dice que no es la vigente` | Falla | La aserción esperaba que la versión vigente fuera la 2, pero observó la versión 1. |
-| `6. con el reloj vencido la autorización se niega, y dice cuándo venció` | Pasa | La aserción observa que se rechaza la autorización vencida y se informa el vencimiento. |
-| `7. un miembro no autoriza por encima de su presupuesto delegado` | Pasa | La aserción observa el límite de presupuesto delegado. |
-| `8. un cambio que nunca alcanza las firmas queda pendiente, con su motivo` | Pasa | La aserción observa que una propuesta sin quórum sigue pendiente. |
+| `1. un cambio sin quórum no entra, y vuelve con la salida que lo dice` | Pasa | Un cambio sin quórum no entra, y el rechazo lleva la salida que lo dice. |
+| `2. la firma de un miembro revocado no cuenta, y el rechazo lo nombra` | Pasa | La firma de un miembro revocado no cuenta, y el rechazo lo nombra. |
+| `3. el mismo cambio dos veces es un cambio: una entrada, el mismo sello` | Pasa | El mismo cambio dos veces es un cambio: una entrada, el mismo sello. |
+| `4. un historial alterado a mano rompe la cadena y la auditoría lo dice` | Pasa | Un historial alterado a mano rompe la cadena, y la auditoría lo dice. |
+| `5. con una versión nueva, la versión vieja se lee igual y se dice que no es la vigente` | Pasa | Con una versión nueva, la vieja se lee igual y se dice que no es la vigente. |
+| `6. con el reloj vencido la autorización se niega, y dice cuándo venció` | Pasa | Con el reloj vencido la autorización se niega, y dice cuándo venció. |
+| `7. un miembro no autoriza por encima de su presupuesto delegado` | Pasa | Un miembro no autoriza por encima de su presupuesto delegado. |
+| `8. un cambio que nunca alcanza las firmas queda pendiente, con su motivo` | Pasa | Un cambio que nunca alcanza las firmas sigue pendiente, con su motivo. |
 
-Estos resultados describen lo observado por las aserciones en el host y la versión del núcleo de la corrida proporcionada. No establecen que Escribano esté listo para usarse. El código y las pruebas no están en este repositorio público.
+Estos resultados describen lo que observaron las aserciones en la corrida proporcionada del 2026-10-09 contra la copia vendorizada de Vespi 0.1.5. Cubren solo el comportamiento que ejercen estos casos; no establecen que Escribano esté listo para usarse. El código y las pruebas no están en este repositorio público.
 
 ### Qué establece la fase anterior del proyecto
 
-El registro de fases del proyecto dice que el acuerdo escrito precedió a la implementación, que los ocho casos adversariales se escribieron primero y se observaron fallar, y que se construyó un recorrido completo por terminal. También registra que el corte del núcleo instalado era Lore Plugin 2.4.9-rc.5, núcleo candidato 0.1.3, commit `54c20c7`, con cinco digests de módulos fijados por las pruebas del proyecto. La corrida actual proporcionada informa que el digest de `continuity.js` ya no coincide con el valor esperado. Son registros de fase del proyecto, no artefactos de código que se puedan inspeccionar por separado en esta copia.
+El registro de fases del proyecto dice que el acuerdo escrito precedió a la implementación, que los ocho casos adversariales se escribieron primero y se observaron en rojo, y que se construyó un recorrido completo por terminal. También registra el corte del núcleo instalado en ese momento (Lore Plugin 2.4.9-rc.5, núcleo candidato 0.1.3) con digests de módulos fijados por las pruebas del proyecto; la captura del 2026-10-03 quedó en rojo contra ese corte, y el proyecto ya re-fijó el núcleo a 0.1.5. Son registros de fase del proyecto, no artefactos de código que se puedan inspeccionar por separado en esta copia.
 
-El registro histórico dice que los nueve proyectos de Vespi con código se construyeron contra el corte `54c20c7` el 2026-09-29 y tenían suites verdes en ese corte. Ese antecedente no implica que sus suites estén verdes contra el núcleo instalado de hoy. No se afirman transacciones de Escribano en testnet ni recibos en cadena.
+El registro histórico dice que los nueve proyectos de Vespi con código se construyeron contra ese mismo corte anterior el 2026-09-29 y tenían suites verdes en ese corte. Ese antecedente no implica que sus suites estén verdes contra el núcleo instalado de hoy. No se afirman transacciones de Escribano en testnet ni recibos en cadena.
 
 ### Cómo repetir la corrida cuando se abra el código
 
-El manifiesto del paquete define el comando de pruebas como `node --test "test/*.test.js"`, y el README fuente documenta el mismo comando para la suite. El proyecto dice que no requiere instalar dependencias y que necesita Node.js 18 o posterior. Está previsto abrir el código durante el periodo de revisión de los jueces bajo la licencia de solo revisión. Estas instrucciones corresponden a esa futura copia con código; no se pueden ejecutar desde este repositorio que solo contiene documentación.
+El manifiesto del paquete define el comando de pruebas como `node --test "test/*.test.js"`, y el README fuente documenta el mismo comando para la suite. El proyecto dice que no requiere instalar dependencias y que necesita Node.js 18 o posterior; la corrida proporcionada usó Node v24.15.0. Está previsto abrir el código durante el periodo de revisión de los jueces bajo la licencia de solo revisión. Cuando esa copia exista, la suite debe informar el mismo conteo que la captura de referencia en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 pruebas, todas aprobadas, ninguna omitida. Estas instrucciones corresponden a esa futura copia con código; no se pueden ejecutar desde este repositorio que solo contiene documentación.

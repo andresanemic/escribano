@@ -1,0 +1,24 @@
+Suite capture — escribano — 2026-10-09
+Command: node --test test/*.test.js (clean clone of commit 18022b5, empty HOME, no network)
+Node: v24.15.0 · Kernel: Vespi 0.1.5, commit ed559e83c976dd6e6a379a5510db776206f670b4, copied in vendor/vespi-kernel
+Summary: tests 13 pass 13 fail 0 cancelled 0 skipped 0 todo 0 
+
+✔ la copia del núcleo que Escribano consume es la vendorizada, y solo esa (2.1129ms)
+✔ el núcleo es el corte fijado, módulo por módulo (106.4278ms)
+✔ los ocho encabezados declaran el mismo commit fijado (3.902ms)
+✔ el SOURCE.md vendido declara los mismos ocho módulos que este proyecto espera (2.2297ms)
+✔ lo que el núcleo exporta es lo que este proyecto usa, y existe (5.1588ms)
+✔ 1. un cambio sin quórum no entra, y vuelve con la salida que lo dice (35.583ms)
+✔ 2. la firma de un miembro revocado no cuenta, y el rechazo lo nombra (29.856ms)
+✔ 3. el mismo cambio dos veces es un cambio: una entrada, el mismo sello (53.8124ms)
+✔ 4. un historial alterado a mano rompe la cadena y la auditoría lo dice (40.9058ms)
+✔ 5. con una versión nueva, la versión vieja se lee igual y se dice que no es la vigente (41.4317ms)
+✔ 6. con el reloj vencido la autorización se niega, y dice cuándo venció (13.2253ms)
+✔ 7. un miembro no autoriza por encima de su presupuesto delegado (19.8047ms)
+✔ 8. un cambio que nunca alcanza las firmas queda pendiente, con su motivo (17.6822ms)
+ℹ tests 13
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0

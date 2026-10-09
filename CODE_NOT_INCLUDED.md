@@ -2,7 +2,7 @@
 
 ## What this repository contains
 
-This public repository contains the project agreement and review documentation, not Escribano's source code or test files. That means the described terminal flow cannot be independently run from this checkout. The evidence page reports a supplied test run and distinguishes its passing and failing assertions; it does not ask readers to treat that snapshot as a working product.
+This public repository contains the project agreement and review documentation, not Escribano's source code or test files. That means the described terminal flow cannot be independently run from this checkout. The evidence page reports a supplied test run with its recorded outcomes; it does not ask readers to treat that snapshot as a working product.
 
 ## Review period
 
@@ -12,13 +12,13 @@ For the current review, begin with the [agreement walkthrough](./docs/HOW_IT_WOR
 
 ## When source becomes available
 
-The source project's package manifest specifies Node.js 18 or later and defines the suite command as `node --test "test/*.test.js"`. The source README says there are no dependencies to install. The current public checkout does not contain the package manifest, source files, or tests, so those instructions cannot be used here to reproduce the recorded 8/13 result.
+The source project's package manifest specifies Node.js 18 or later and defines the suite command as `node --test "test/*.test.js"`. The source README says there are no dependencies to install. The current public checkout does not contain the package manifest, source files, or tests, so those instructions cannot be used here to reproduce the recorded run of 2026-10-09.
 
 ## Español
 
 ### Qué contiene este repositorio
 
-Este repositorio público contiene el acuerdo del proyecto y documentación de revisión, no el código fuente ni los archivos de prueba de Escribano. Por eso, el recorrido de terminal descrito no se puede ejecutar por cuenta propia desde esta copia. La página de evidencia informa una corrida proporcionada y distingue las aserciones aprobadas y fallidas; no pide tratar esa fotografía como un producto listo.
+Este repositorio público contiene el acuerdo del proyecto y documentación de revisión, no el código fuente ni los archivos de prueba de Escribano. Por eso, el recorrido de terminal descrito no se puede ejecutar por cuenta propia desde esta copia. La página de evidencia informa una corrida proporcionada con sus resultados registrados; no pide tratar esa fotografía como un producto listo.
 
 ### Periodo de revisión
 
@@ -28,4 +28,4 @@ Para esta revisión, empieza por el [recorrido del acuerdo](./docs/HOW_IT_WORKS.
 
 ### Cuando esté disponible el código
 
-El manifiesto del proyecto fuente especifica Node.js 18 o posterior y define el comando de la suite como `node --test "test/*.test.js"`. El README fuente dice que no hay dependencias que instalar. Esta copia pública no incluye el manifiesto, los archivos fuente ni las pruebas, así que esas instrucciones no sirven aquí para reproducir el resultado 8/13.
+El manifiesto del proyecto fuente especifica Node.js 18 o posterior y define el comando de la suite como `node --test "test/*.test.js"`. El README fuente dice que no hay dependencias que instalar. Esta copia pública no incluye el manifiesto, los archivos fuente ni las pruebas, así que esas instrucciones no sirven aquí para reproducir la corrida registrada del 2026-10-09.
