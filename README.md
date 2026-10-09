@@ -1,6 +1,8 @@
-[![Escribano cover](./assets/cover.png)](./assets/cover.png)
+<p align="center">
+  <a href="./assets/cover.png"><img src="./assets/cover.png" alt="Escribano cover" width="100%"></a>
+</p>
 
-# Escribano
+<h1 align="center">Escribano</h1>
 
 <p align="center">
   <a href="#english"><img src="https://img.shields.io/badge/status-prototype-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: prototype"></a>
@@ -14,11 +16,8 @@
 <p align="center"><b>Escribano</b> — a public contract shows today's rule, not who changed it or which approvals counted.<br>
 Each change is checked separately and recorded. Evidence: 13/13 tests. Fictional data. Wyoming Statutes Title 17, Chapter 31 as design reference.</p>
 
-<p align="center"><strong>A local record for every change to a fictional DAO's governing contract, with its receipt, its authorization trail, and its place in the version history.</strong></p>
-
-<p align="center">A public contract can tell you what the rule says today. It cannot, by itself, tell a new member who changed it, which approvals counted, or what the earlier version said.</p>
-
-<p align="center">This repository contains the agreement and review documents. It does not include the source code.</p>
+<p align="center"><b>We’re applying to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
+<p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./CODE_NOT_INCLUDED.md">Source and review terms</a>.<br>This public snapshot contains documentation and evidence, not runnable source.</p>
 
 ---
 
@@ -36,13 +35,6 @@ Each change is checked separately and recorded. Evidence: 13/13 tests. Fictional
 Imagine joining an organization after a difficult decision. You can find the current contract, but the person who kept the old copies has left. The document does not tell you which version came first, who approved the change, or why a proposal that lacked enough support was refused. A record that keeps only today's text leaves that explanation in someone's memory.
 
 Escribano explores a local, append-only history in which a contract change is treated as an event with an identifier and a receipt. The record is meant to let a reader follow the change back through earlier versions. The project is a software model of that form; it is not a legal register or a filing service.
-
-### If you are judging Find Your Way or Meridian, start here
-
-- Read the project foundation and its walkthrough. Start with [How it works](./docs/HOW_IT_WORKS.md).
-- Open the test record. See [Evidence](./docs/EVIDENCE.md).
-- Read the legal and verification limits. See [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
-- Review the publication conditions. See [Code not included](./CODE_NOT_INCLUDED.md) and the [review-only license](./LICENSE).
 
 ### In one minute
 
@@ -145,6 +137,8 @@ Start with the agreement's model and the walkthrough in [How it works](./docs/HO
 
 <details>
 <summary><b>Leer en español</b></summary>
+
+<p align="center"><b>Postulamos a la hackatón Find Your Way y planeamos participar en Meridian.</b></p>
 
 <p align="center"><b>Escribano</b> — un contrato público muestra la regla de hoy, no quién la cambió ni qué aprobaciones contaron.<br>
 Cada cambio se comprueba aparte y queda registro. Evidencia: 13/13 pruebas. Datos ficticios. Wyoming Statutes Title 17, Chapter 31 como referencia de diseño.</p>
