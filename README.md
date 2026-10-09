@@ -116,6 +116,8 @@ The public checkout contains no test files or source code, so this capture canno
 
 Escribano consumes Vespi's kernel and the agreement says it does not modify it. The documented design uses the kernel's authority checks, operation receipts, verification separate from execution, and continuity reconstructed from the record. Lore Plugin supplies the installed project context from which Escribano's kernel copy was selected. The current public checkout does not include code for an independent inspection of those integrations. [Vespi](https://github.com/andresanemic/vespi) is the kernel project; [Lore Plugin](https://github.com/andresanemic/lore-plugin) provides the host context described by the agreement.
 
+**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.5, in the pinned copy that Lore Plugin 2.5.1 distributes (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
+
 ### What it does not do, and what is not verified
 
 Escribano does not submit documents to Wyoming, amend filed articles, confer DAO status, create a legal entity, deploy a contract, write to a blockchain, or produce a deposit with legal effect. The agreement cites Wyoming W.S. 17-31 as a reference for the shape of a record with an identifier and update history. It does not claim legal compliance. The project has not been compared with an actual filing process or reviewed by a competent legal professional.
@@ -232,6 +234,8 @@ La copia pública no incluye los archivos de pruebas ni el código, así que no 
 ### Escribano, Vespi y Lore Plugin
 
 Escribano consume el núcleo de Vespi y, según el acuerdo, no lo modifica. El diseño documentado usa las comprobaciones de autoridad del núcleo, recibos de operaciones, verificación separada de la ejecución y continuidad reconstruida desde el registro. Lore Plugin aporta el contexto instalado del que se seleccionó la copia del núcleo. La copia pública actual no incluye código para inspeccionar esas integraciones por cuenta propia. [Vespi](https://github.com/andresanemic/vespi) es el proyecto del núcleo; [Lore Plugin](https://github.com/andresanemic/lore-plugin) aporta el contexto de hosts descrito en el acuerdo.
+
+**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.5, en la copia fijada que distribuye Lore Plugin 2.5.1 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
 ### Qué no hace y qué no está verificado
 
