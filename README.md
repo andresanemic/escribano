@@ -12,9 +12,7 @@
 </p>
 
 <p align="center"><b>Escribano</b> — a public contract shows today's rule, not who changed it or which approvals counted.<br>
-Each change is checked separately and recorded. Evidence: 13/13 tests. Fictional data. Wyoming Statutes Title 17, Chapter 31 as design reference.<br>
-<b>Escribano</b> — un contrato público muestra la regla de hoy, no quién la cambió ni qué aprobaciones contaron.<br>
-Cada cambio se comprueba aparte y queda registro. Evidencia: 13/13 pruebas. Datos ficticios. Wyoming Statutes Title 17, Chapter 31 como referencia de diseño.</p>
+Each change is checked separately and recorded. Evidence: 13/13 tests. Fictional data. Wyoming Statutes Title 17, Chapter 31 as design reference.</p>
 
 <p align="center"><strong>A local record for every change to a fictional DAO's governing contract, with its receipt, its authorization trail, and its place in the version history.</strong></p>
 
@@ -147,6 +145,9 @@ Start with the agreement's model and the walkthrough in [How it works](./docs/HO
 
 <details>
 <summary><b>Leer en español</b></summary>
+
+<p align="center"><b>Escribano</b> — un contrato público muestra la regla de hoy, no quién la cambió ni qué aprobaciones contaron.<br>
+Cada cambio se comprueba aparte y queda registro. Evidencia: 13/13 pruebas. Datos ficticios. Wyoming Statutes Title 17, Chapter 31 como referencia de diseño.</p>
 
 **Escribano conserva un registro local y legible de cada cambio al contrato rector de una DAO ficticia.**
 
