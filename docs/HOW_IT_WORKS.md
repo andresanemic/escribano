@@ -79,9 +79,9 @@ Escribano does not create a DAO, establish legal status, amend filed articles, s
 
 This repository currently contains documentation rather than the source and test files. The recorded suite result does not establish a finished or ready-to-use product. See [Legal and limits](./LEGAL_AND_LIMITS.md), [Evidence](./EVIDENCE.md), and [Code not included](../CODE_NOT_INCLUDED.md) for those boundaries.
 
-## Español
+# Español
 
-### El modelo
+## El modelo
 
 Escribano está diseñado como un registro local append-only de cambios al contrato rector de una DAO ficticia. Cada cambio aceptado pertenece a un historial de versiones y se asocia con un recibo y las autorizaciones de miembros contadas. Cualquiera que tenga el registro puede leer el estado actual y las entradas anteriores.
 
@@ -89,7 +89,7 @@ El acuerdo define el cambio como la unidad relevante: cambia una cláusula o un 
 
 Todos los datos del proyecto son sintéticos: una DAO ficticia, cinco miembros ficticios, un contrato ficticio y un registro local. No hay miembros, aportadores, registros de terceros ni direcciones de blockchain reales.
 
-### Personas y permisos
+## Personas y permisos
 
 | Actor | Qué puede hacer | Límite |
 |---|---|---|
@@ -101,7 +101,7 @@ Todos los datos del proyecto son sintéticos: una DAO ficticia, cinco miembros f
 
 El diseño exige más de una aprobación de miembros distintos; el recorrido ilustrado y la suite usan un umbral de tres aprobaciones. Es una regla del proyecto, no un requisito de Wyoming W.S. 17-31. La autoridad delegada solo puede reducir el presupuesto, el plazo y el origen de la autorización de origen. El presupuesto es un límite duro. Una aprobación sin nombre cuenta cero, y la identidad propia del agente queda fuera del quórum.
 
-### Un cambio, de la propuesta al historial
+## Un cambio, de la propuesta al historial
 
 Imagina que una DAO ficticia cambia una cláusula de su contrato rector. Las etapas siguientes describen el flujo previsto. El repositorio público no incluye hoy código fuente que permita ejecutar el ejemplo.
 
@@ -133,7 +133,7 @@ agregar entrada local + recibo
 
 El ejemplo del README usa los nombres ficticios La Fragua, Bruna, Nilo y Sabina. Los comandos de terminal documentados se citan allí desde el README fuente, no como una ejecución de esta copia pública. No se inventa una salida de éxito para un cambio.
 
-### Cómo se limita la autoridad
+## Cómo se limita la autoridad
 
 Una autorización no es un permiso plano. Tiene un número de operaciones permitido, vencimiento y origen. El modelo los comprueba por separado:
 
@@ -146,7 +146,7 @@ Una autorización no es un permiso plano. Tiene un número de operaciones permit
 
 La fotografía de pruebas proporcionada el 2026-10-09 aprueba sus 13 casos, entre ellos las aserciones de vencimiento, presupuesto delegado y propuesta sin quórum. Son tipos de evidencia distintos: las reglas describen el modelo previsto y el resultado de pruebas muestra lo que cubre la corrida registrada.
 
-### Qué pueden mostrar el registro y el recibo
+## Qué pueden mostrar el registro y el recibo
 
 El recibo previsto identifica quién contó, qué operación se ejerció y qué comprobó el verificador según su cobertura declarada. El almacén local conserva el digest del recibo para que el verificador compruebe el historial recibido. Según el acuerdo, el proyecto usa el formato de recibos y el mecanismo de verificación de Vespi; Escribano no modifica el núcleo.
 
@@ -154,7 +154,7 @@ Un digest SHA-256 simple no tiene una clave secreta. Quien puede reescribir el a
 
 El acuerdo describe el anclaje del recibo como `pending`. No se afirma ninguna transacción en blockchain ni testnet.
 
-### Qué no demuestra
+## Qué no demuestra
 
 Escribano no crea una DAO, establece condición jurídica, enmienda artículos depositados, presenta documentos ante una autoridad pública, despliega ni actualiza un contrato inteligente, ni produce una presentación con efecto legal. No usa blockchain ni testnet. Las aprobaciones de miembros son atestaciones locales ficticias, no firmas criptográficas. El registro no establece la identidad de una persona, si una propuesta es verdadera o justa, ni si una organización siguió un proceso legal real.
 

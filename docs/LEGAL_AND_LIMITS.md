@@ -27,9 +27,9 @@ The agreement is explicit that Wyoming W.S. 17-31 does **not** require multiple 
 - The project has not been checked against an actual Wyoming filing process. What would be required for a real organization to amend filed articles remains outside the evidence supplied here.
 - The agreement leaves the name and terminal interface as choices that Andrés may revisit before a jury sees them; other forms such as web, desktop, or mobile are not promised.
 
-## Español
+# Español
 
-### Qué cita el acuerdo
+## Qué cita el acuerdo
 
 El acuerdo del proyecto dice que su fuente primaria se leyó el 2026-09-29: Wyoming Statutes, Título 17, capítulo 31, en el PDF oficial de la Legislatura de Wyoming. Cita estos artículos para describir la forma que imita el mecanismo local:
 
@@ -45,7 +45,7 @@ Esto es solo una referencia de diseño. El acuerdo dice que Escribano simula la 
 
 El acuerdo es explícito: Wyoming W.S. 17-31 **no exige** varias firmas para cambiar un contrato. El quórum es una elección de diseño de Vespi, no un requisito legal. Los artículos citados tratan del identificador, el procedimiento, las enmiendas y la capacidad de actualización descritos arriba.
 
-### Límites y preguntas abiertas
+## Límites y preguntas abiertas
 
 - El proyecto no tiene una DAO, miembros, aportadores, wallet, persona jurídica ni datos de terceros reales. El acuerdo dice que todos sus datos son sintéticos.
 - El registro es local y reversible. No se presenta nada ante una autoridad de Wyoming ni se envía a sistemas de terceros.

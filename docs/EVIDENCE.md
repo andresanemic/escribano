@@ -49,9 +49,9 @@ The nine Vespi projects with code were recorded as built against that same earli
 
 The package manifest defines the test command as `node --test "test/*.test.js"`, and the source README documents the same suite command. The project says it has no dependencies to install and requires Node.js 18 or later; the supplied run used Node v24.15.0. The code is intended to open during the judges' review period under the review-only license. When that checkout exists, the suite should report the same count as the reference capture in [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 tests, all passing, none skipped. These instructions are for that future code checkout; they cannot be run from this documentation-only repository.
 
-## Español
+# Español
 
-### Resultado actual
+## Resultado actual
 
 La corrida proporcionada del 2026-10-09 informa **13 pruebas: 13 aprobadas, 0 omitidas** sobre Node v24.15.0. La captura, guardada en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt), es la referencia de estos conteos y de estos nombres de prueba. El repositorio público no incluye los archivos de prueba ni el código fuente, por lo que no se puede repetir desde esta copia.
 
@@ -61,9 +61,9 @@ La corrida ejecutó `node --test test/*.test.js` en un clon limpio del proyecto 
 
 La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3). Esa re-fijación ya está hecha: esta corrida comprueba la copia vendorizada de 0.1.5 contra su propio `SOURCE.md`, y todas las comprobaciones pasan. El resultado anterior se conserva como historial; no es el estado actual.
 
-### Las 13 pruebas
+## Las 13 pruebas
 
-#### Frontera del núcleo e interfaz esperada
+### Frontera del núcleo e interfaz esperada
 
 | Nombre de la prueba | Resultado | Qué muestra la corrida proporcionada |
 |---|---|---|
@@ -73,7 +73,7 @@ La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fi
 | `el SOURCE.md vendido declara los mismos ocho módulos que este proyecto espera` | Pasa | El `SOURCE.md` vendido declara los ocho módulos que el proyecto espera. |
 | `lo que el núcleo exporta es lo que este proyecto usa, y existe` | Pasa | Existen las exportaciones esperadas. |
 
-#### Casos adversariales
+### Casos adversariales
 
 El registro de fases del proyecto dice que los ocho casos se escribieron primero y se observaron en rojo antes de implementar. En esta corrida, las ocho aserciones pasan.
 
@@ -90,12 +90,12 @@ El registro de fases del proyecto dice que los ocho casos se escribieron primero
 
 Estos resultados describen lo que observaron las aserciones en la corrida proporcionada del 2026-10-09 contra la copia vendorizada de Vespi 0.1.5. Cubren solo el comportamiento que ejercen estos casos; no establecen que Escribano esté listo para usarse. El código y las pruebas no están en este repositorio público.
 
-### Qué establece la fase anterior del proyecto
+## Qué establece la fase anterior del proyecto
 
 El registro de fases del proyecto dice que el acuerdo escrito precedió a la implementación, que los ocho casos adversariales se escribieron primero y se observaron en rojo, y que se construyó un recorrido completo por terminal. También registra el corte del núcleo instalado en ese momento (Lore Plugin 2.4.9-rc.5, núcleo candidato 0.1.3) con digests de módulos fijados por las pruebas del proyecto; la captura del 2026-10-03 quedó en rojo contra ese corte, y el proyecto ya re-fijó el núcleo a 0.1.5. Son registros de fase del proyecto, no artefactos de código que se puedan inspeccionar por separado en esta copia.
 
 El registro histórico dice que los nueve proyectos de Vespi con código se construyeron contra ese mismo corte anterior el 2026-09-29 y tenían suites verdes en ese corte. Ese antecedente no implica que sus suites estén verdes contra el núcleo instalado de hoy. No se afirman transacciones de Escribano en testnet ni recibos en cadena.
 
-### Cómo repetir la corrida cuando se abra el código
+## Cómo repetir la corrida cuando se abra el código
 
 El manifiesto del paquete define el comando de pruebas como `node --test "test/*.test.js"`, y el README fuente documenta el mismo comando para la suite. El proyecto dice que no requiere instalar dependencias y que necesita Node.js 18 o posterior; la corrida proporcionada usó Node v24.15.0. Está previsto abrir el código durante el periodo de revisión de los jueces bajo la licencia de solo revisión. Cuando esa copia exista, la suite debe informar el mismo conteo que la captura de referencia en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 pruebas, todas aprobadas, ninguna omitida. Estas instrucciones corresponden a esa futura copia con código; no se pueden ejecutar desde este repositorio que solo contiene documentación.
