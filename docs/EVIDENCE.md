@@ -47,7 +47,7 @@ The nine Vespi projects with code were recorded as built against that same earli
 
 ## Rerunning the suite
 
-The package manifest defines the test command as `node --test "test/*.test.js"`, and the source README documents the same suite command. The project says it has no dependencies to install and requires Node.js 18 or later; the supplied run used Node v24.15.0. The code is in this repository under the review-only license, which permits reading and cloning for evaluation but not modification or redistribution. From the project root, run `npm test` on Node 24; the suite should report the same count as the reference capture in [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 tests, all passing, none skipped.
+The package manifest defines the test command as `node --test "test/*.test.js"`, and the source README documents the same suite command. The project says it has no dependencies to install and is run on Node 24; the supplied run used Node v24.15.0. The code is in this repository under the review-only license, which permits reading and cloning for evaluation but not modification or redistribution. From the project root, run `npm test` on Node 24; the suite should report the same count as the reference capture in [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 tests, all passing, none skipped.
 
 # Español
 
@@ -98,4 +98,4 @@ El registro histórico dice que los nueve proyectos de Vespi con código se cons
 
 ## Cómo repetir la corrida
 
-El manifiesto del paquete define el comando de pruebas como `node --test "test/*.test.js"`, y el README fuente documenta el mismo comando para la suite. El proyecto dice que no requiere instalar dependencias y que necesita Node.js 18 o posterior; la corrida proporcionada usó Node v24.15.0. El código está en este repositorio bajo la licencia de solo revisión, que permite leer y clonar para evaluar, no modificar ni redistribuir. Desde la raíz del proyecto, ejecuta `npm test` con Node 24; la suite debe informar el mismo conteo que la captura de referencia en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 pruebas, todas aprobadas, ninguna omitida.
+El manifiesto del paquete define el comando de pruebas como `node --test "test/*.test.js"`, y el README fuente documenta el mismo comando para la suite. El proyecto dice que no requiere instalar dependencias y que se ejecuta con Node 24; la corrida proporcionada usó Node v24.15.0. El código está en este repositorio bajo la licencia de solo revisión, que permite leer y clonar para evaluar, no modificar ni redistribuir. Desde la raíz del proyecto, ejecuta `npm test` con Node 24; la suite debe informar el mismo conteo que la captura de referencia en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 pruebas, todas aprobadas, ninguna omitida.
