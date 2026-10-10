@@ -2,7 +2,7 @@
 
 ## Current result
 
-The supplied run dated 2026-10-09 reports **13 tests, all passing and none skipped** on Node v24.15.0. The capture, kept at [`suite-2026-10-09.txt`](./suite-2026-10-09.txt), is the reference for these counts and these test names. The public repository does not contain the test files or source code, so the run cannot be repeated from this checkout.
+The supplied run dated 2026-10-09 reports **13 tests, all passing and none skipped** on Node v24.15.0. The capture, kept at [`suite-2026-10-09.txt`](./suite-2026-10-09.txt), is the reference for these counts and these test names. The public repository contains the test files and source code under the review-only license, so the run can be repeated from this checkout with `npm test`.
 
 The run executed `node --test test/*.test.js` in a clean clone of the private project with an empty HOME and no network. The kernel is Vespi 0.1.5, commit `ed559e83c976dd6e6a379a5510db776206f670b4`, copied into the project at `vendor/vespi-kernel`; the kernel-boundary checks compare that copy against its `SOURCE.md`, module by module and commit by commit.
 
@@ -45,15 +45,15 @@ The project phase record states that the written agreement preceded implementati
 
 The nine Vespi projects with code were recorded as built against that same earlier cut on 2026-09-29, with green suites at that cut. That historical record does not mean their suites are green against the installed kernel today. No Escribano testnet transactions or chain receipts are claimed.
 
-## Rerunning when code opens
+## Rerunning the suite
 
-The package manifest defines the test command as `node --test "test/*.test.js"`, and the source README documents the same suite command. The project says it has no dependencies to install and requires Node.js 18 or later; the supplied run used Node v24.15.0. The code is intended to open during the judges' review period under the review-only license. When that checkout exists, the suite should report the same count as the reference capture in [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 tests, all passing, none skipped. These instructions are for that future code checkout; they cannot be run from this documentation-only repository.
+The package manifest defines the test command as `node --test "test/*.test.js"`, and the source README documents the same suite command. The project says it has no dependencies to install and requires Node.js 18 or later; the supplied run used Node v24.15.0. The code is in this repository under the review-only license, which permits reading and cloning for evaluation but not modification or redistribution. From the project root, run `npm test` on Node 24; the suite should report the same count as the reference capture in [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 tests, all passing, none skipped.
 
 # Español
 
 ## Resultado actual
 
-La corrida proporcionada del 2026-10-09 informa **13 pruebas: 13 aprobadas, 0 omitidas** sobre Node v24.15.0. La captura, guardada en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt), es la referencia de estos conteos y de estos nombres de prueba. El repositorio público no incluye los archivos de prueba ni el código fuente, por lo que no se puede repetir desde esta copia.
+La corrida proporcionada del 2026-10-09 informa **13 pruebas: 13 aprobadas, 0 omitidas** sobre Node v24.15.0. La captura, guardada en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt), es la referencia de estos conteos y de estos nombres de prueba. El repositorio público incluye los archivos de prueba y el código fuente bajo la licencia de solo revisión, por lo que se puede repetir desde esta copia con `npm test`.
 
 La corrida ejecutó `node --test test/*.test.js` en un clon limpio del proyecto privado, con HOME vacío y sin red. El núcleo es Vespi 0.1.5, commit `ed559e83c976dd6e6a379a5510db776206f670b4`, copiado dentro del proyecto en `vendor/vespi-kernel`; las comprobaciones de frontera comparan esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit.
 
@@ -96,6 +96,6 @@ El registro de fases del proyecto dice que el acuerdo escrito precedió a la imp
 
 El registro histórico dice que los nueve proyectos de Vespi con código se construyeron contra ese mismo corte anterior el 2026-09-29 y tenían suites verdes en ese corte. Ese antecedente no implica que sus suites estén verdes contra el núcleo instalado de hoy. No se afirman transacciones de Escribano en testnet ni recibos en cadena.
 
-## Cómo repetir la corrida cuando se abra el código
+## Cómo repetir la corrida
 
-El manifiesto del paquete define el comando de pruebas como `node --test "test/*.test.js"`, y el README fuente documenta el mismo comando para la suite. El proyecto dice que no requiere instalar dependencias y que necesita Node.js 18 o posterior; la corrida proporcionada usó Node v24.15.0. Está previsto abrir el código durante el periodo de revisión de los jueces bajo la licencia de solo revisión. Cuando esa copia exista, la suite debe informar el mismo conteo que la captura de referencia en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 pruebas, todas aprobadas, ninguna omitida. Estas instrucciones corresponden a esa futura copia con código; no se pueden ejecutar desde este repositorio que solo contiene documentación.
+El manifiesto del paquete define el comando de pruebas como `node --test "test/*.test.js"`, y el README fuente documenta el mismo comando para la suite. El proyecto dice que no requiere instalar dependencias y que necesita Node.js 18 o posterior; la corrida proporcionada usó Node v24.15.0. El código está en este repositorio bajo la licencia de solo revisión, que permite leer y clonar para evaluar, no modificar ni redistribuir. Desde la raíz del proyecto, ejecuta `npm test` con Node 24; la suite debe informar el mismo conteo que la captura de referencia en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 pruebas, todas aprobadas, ninguna omitida.

@@ -22,7 +22,7 @@ The design requires more than one distinct member approval; its illustrated work
 
 ## One change, from proposal to history
 
-Consider a fictional DAO changing one clause in its governing contract. The stages below describe the intended flow. The public repository does not contain source code that can run this example today.
+Consider a fictional DAO changing one clause in its governing contract. The stages below describe the intended flow. The source code is in this repository, but this page does not present a run of the example as evidence.
 
 1. A member proposes the change. It remains pending and does not alter the current contract.
 2. Members attest using their own authorizations. The model checks that each authorization is current, unrevoked, within budget, and attributable to a distinct member.
@@ -77,7 +77,7 @@ The agreement describes the receipt anchor as `pending`. No blockchain or testne
 
 Escribano does not create a DAO, establish legal status, amend filed articles, submit documents to a public authority, deploy or update a smart contract, or produce a filing with legal effect. It does not use blockchain or testnet. Member approvals are fictional local attestations, not cryptographic signatures. The record does not establish a person's identity, whether a proposal is true or fair, or whether an organization followed a real legal process.
 
-This repository currently contains documentation rather than the source and test files. The recorded suite result does not establish a finished or ready-to-use product. See [Legal and limits](./LEGAL_AND_LIMITS.md), [Evidence](./EVIDENCE.md), and [Code not included](../CODE_NOT_INCLUDED.md) for those boundaries.
+This repository contains the source and test files under the review-only license. The recorded suite result does not establish a finished or ready-to-use product. See [Legal and limits](./LEGAL_AND_LIMITS.md) and [Evidence](./EVIDENCE.md) for those boundaries.
 
 # Español
 
@@ -103,7 +103,7 @@ El diseño exige más de una aprobación de miembros distintos; el recorrido ilu
 
 ## Un cambio, de la propuesta al historial
 
-Imagina que una DAO ficticia cambia una cláusula de su contrato rector. Las etapas siguientes describen el flujo previsto. El repositorio público no incluye hoy código fuente que permita ejecutar el ejemplo.
+Imagina que una DAO ficticia cambia una cláusula de su contrato rector. Las etapas siguientes describen el flujo previsto. El código fuente está en este repositorio, pero esta página no presenta una ejecución del ejemplo como evidencia.
 
 1. Un miembro propone el cambio. Queda pendiente y no altera el contrato vigente.
 2. Los miembros atestiguan con sus propias autorizaciones. El modelo comprueba que cada una esté vigente, no revocada, dentro del presupuesto y asociada a un miembro distinto.
@@ -158,4 +158,4 @@ El acuerdo describe el anclaje del recibo como `pending`. No se afirma ninguna t
 
 Escribano no crea una DAO, establece condición jurídica, enmienda artículos depositados, presenta documentos ante una autoridad pública, despliega ni actualiza un contrato inteligente, ni produce una presentación con efecto legal. No usa blockchain ni testnet. Las aprobaciones de miembros son atestaciones locales ficticias, no firmas criptográficas. El registro no establece la identidad de una persona, si una propuesta es verdadera o justa, ni si una organización siguió un proceso legal real.
 
-Este repositorio contiene hoy documentación, no los archivos de código y pruebas. El resultado de la suite registrada no demuestra que el producto esté terminado ni listo para usarse. Consulta [Marco legal y límites](./LEGAL_AND_LIMITS.md), [Evidencia](./EVIDENCE.md) y [Código no incluido](../CODE_NOT_INCLUDED.md) para conocer esos límites.
+Este repositorio contiene los archivos de código y pruebas bajo la licencia de solo revisión. El resultado de la suite registrada no demuestra que el producto esté terminado ni listo para usarse. Consulta [Marco legal y límites](./LEGAL_AND_LIMITS.md) y [Evidencia](./EVIDENCE.md) para conocer esos límites.

@@ -1,0 +1,11 @@
+{
+  "name": "escribano",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Proyecto 6 de los diez de Vespi: la DAO con registro con recibos de cada cambio de su contrato. Consume el kernel de Vespi desde la copia instalada; no lo modifica. No afirma efecto legal.",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "recorrido": "node src/recorrido.js",
+    "cli": "node src/cli.js"
+  }
+}
