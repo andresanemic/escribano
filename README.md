@@ -176,7 +176,7 @@ node src/cli.js historial
 node src/cli.js auditar
 ```
 
-Las reglas del proyecto indican que la primera decisión no alcanza el umbral de tres miembros y deja la propuesta pendiente. La corrida proporcionada del 2026-10-09 registra este caso como aprobado: la prueba `1. un cambio sin quórum no entra, y vuelve con la salida que lo dice`. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3); esa re-fijación ya está hecha. El repositorio público no incluye el código ni las pruebas para repetir aquí el recorrido de terminal.
+Las reglas del proyecto indican que la primera decisión no alcanza el umbral de tres miembros y deja la propuesta pendiente. La corrida proporcionada del 2026-10-09 registra este caso como aprobado: la prueba `1. un cambio sin quórum no entra, y vuelve con la salida que lo dice`. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3); esa re-fijación ya está hecha. El código y las pruebas están en este repositorio: ejecuta `npm test` con Node 24 para repetir la suite.
 
 ### Por qué Escribano
 
@@ -230,7 +230,7 @@ La copia pública no incluye los archivos de pruebas ni el código, así que no 
 
 ### Escribano, Vespi y Lore Plugin
 
-Escribano consume el núcleo de Vespi y, según el acuerdo, no lo modifica. El diseño documentado usa las comprobaciones de autoridad del núcleo, recibos de operaciones, verificación separada de la ejecución y continuidad reconstruida desde el registro. Lore Plugin aporta el contexto instalado del que se seleccionó la copia del núcleo. La copia pública actual no incluye código para inspeccionar esas integraciones por cuenta propia. [Vespi](https://github.com/andresanemic/vespi) es el proyecto del núcleo; [Lore Plugin](https://github.com/andresanemic/lore-plugin) aporta el contexto de hosts descrito en el acuerdo.
+Escribano consume el núcleo de Vespi y, según el acuerdo, no lo modifica. El diseño documentado usa las comprobaciones de autoridad del núcleo, recibos de operaciones, verificación separada de la ejecución y continuidad reconstruida desde el registro. Lore Plugin aporta el contexto instalado del que se seleccionó la copia del núcleo. El código de esas integraciones está en este repositorio, en `src/`, para inspeccionarlo por cuenta propia. [Vespi](https://github.com/andresanemic/vespi) es el proyecto del núcleo; [Lore Plugin](https://github.com/andresanemic/lore-plugin) aporta el contexto de hosts descrito en el acuerdo.
 
 **Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.5, en la copia fijada que distribuye Lore Plugin 2.5.1 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
