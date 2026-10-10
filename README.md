@@ -6,8 +6,8 @@
 
 <p align="center">
   <a href="#english"><img src="https://img.shields.io/badge/status-prototype-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: prototype"></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-review--only-D7B698?style=for-the-badge&labelColor=07111A" alt="Review-only license"></a>
-  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-13_of_13_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: all 13 pass"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-review--only-D7B698?style=for-the-badge&labelColor=07111A" alt="License: review only"></a>
+  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-13_of_13_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 13 of 13 tests pass"></a>
   <a href="#english"><img src="https://img.shields.io/badge/agreement-written_before_code-E0C170?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
   <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_release-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 release (commit ed559e8)"></a>
@@ -15,6 +15,8 @@
 
 <p align="center"><b>Escribano</b> — a public contract shows today's rule, not who changed it or which approvals counted.<br>
 Each change is checked separately and recorded. Evidence: 13/13 tests. Fictional data. Wyoming Statutes Title 17, Chapter 31 as design reference.</p>
+
+<p align="center"><a href="#english"><b>Read in English</b></a> · <a href="#espanol"><b>Leer en español</b></a></p>
 
 <p align="center"><b>We’re applying to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
 <p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./CODE_NOT_INCLUDED.md">Source and review terms</a>.<br>This public snapshot contains documentation and evidence, not runnable source.</p>
@@ -137,6 +139,8 @@ Start with the agreement's model and the walkthrough in [How it works](./docs/HO
 
 <details>
 <summary><b>Leer en español</b></summary>
+
+<a id="espanol"></a>
 
 **Escribano conserva un registro local y legible de cada cambio al contrato rector de una DAO ficticia.**
 
