@@ -16,8 +16,6 @@
 <p align="center"><b>Escribano</b> — a public contract shows today's rule, not who changed it or which approvals counted.<br>
 Each change is checked separately and recorded. Evidence: 13/13 tests. Fictional data. Wyoming Statutes Title 17, Chapter 31 as design reference.</p>
 
-<p align="center"><a href="#english"><b>Read in English</b></a> · <a href="#espanol"><b>Leer en español</b></a></p>
-
 <p align="center"><b>We’re applying to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
 <p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./CODE_NOT_INCLUDED.md">Source and review terms</a>.<br>This public snapshot contains documentation and evidence, not runnable source.</p>
 
