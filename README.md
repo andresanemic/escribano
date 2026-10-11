@@ -56,7 +56,7 @@ node src/cli.js historial
 node src/cli.js auditar
 ```
 
-The project rules say the first decision is short of the three-member threshold and leaves the proposal pending. The supplied run dated 2026-10-09 records this case passing: the test `1. un cambio sin quórum no entra, y vuelve con la salida que lo dice`. An earlier capture, dated 2026-10-03, was red because the project was pinned to an older kernel cut (0.1.3); that re-pin is now done. The public repository has no source or test files with which to reproduce the terminal walkthrough.
+The project rules say the first decision is short of the three-member threshold and leaves the proposal pending. The supplied run dated 2026-10-11 records this case passing: the test `1. un cambio sin quórum no entra, y vuelve con la salida que lo dice`. An earlier capture, dated 2026-10-03, was red because the project was pinned to an older kernel cut (0.1.3); that re-pin is now done. The public repository has no source or test files with which to reproduce the terminal walkthrough.
 
 ### Why Escribano
 
@@ -66,7 +66,7 @@ The project rules say the first decision is short of the three-member threshold 
 | To see which people counted toward a change | A model that counts distinct members with current authority, not repeated attestations from one identity | [How it works](./docs/HOW_IT_WORKS.md) |
 | To know why authority is bounded | Rules for budget, expiry, origin, delegation, and revocation | [How it works](./docs/HOW_IT_WORKS.md) |
 | To distinguish a record check from proof of identity | A separate verification model, with the limits of an unkeyed digest explained | [Legal and limits](./docs/LEGAL_AND_LIMITS.md) |
-| To see what was tested and what it covers | Test names, the 2026-10-09 capture, and the recorded result of each case | [Evidence](./docs/EVIDENCE.md) |
+| To see what was tested and what it covers | Test names, the 2026-10-11 capture, and the recorded result of each case | [Evidence](./docs/EVIDENCE.md) |
 
 ### How it works
 
@@ -102,7 +102,7 @@ Escribano is not a legal filing, a legal register, a deployed smart contract, a 
 
 ### Evidence you can open
 
-The supplied run dated 2026-10-09 reports **13 tests, all passing and none skipped** on Node v24.15.0. It ran `node --test test/*.test.js` in a clean clone of the project with an empty HOME and no network. The kernel is Vespi **0.1.6**, commit `95f2d61`, copied into the project at `vendor/vespi-kernel`, and the suite checks that copy against its `SOURCE.md`, module by module and commit by commit. An earlier capture, dated 2026-10-03, was red because the project was pinned to an older kernel cut (0.1.3); that re-pin is since done.
+The supplied run dated 2026-10-11 reports **13 tests, all passing and none skipped** on Node v24.15.0. It ran `node --test test/*.test.js` in a clean clone of the project with an empty HOME and no network. The kernel is Vespi **0.1.6**, commit `95f2d61`, copied into the project at `vendor/vespi-kernel`, and the suite checks that copy against its `SOURCE.md`, module by module and commit by commit. An earlier capture, dated 2026-10-03, was red because the project was pinned to an older kernel cut (0.1.3); that re-pin is since done.
 
 All eight adversarial assertions pass in this run: the missing-quorum detail, the revoked-member detail, identical-change idempotency, reading an older version, altered-history detection, expired authorization, delegated-budget limits, and leaving an under-quorum proposal pending. The phase record says all eight cases were written first and observed red before implementation. See the exact test names and recorded outcomes in [Evidence](./docs/EVIDENCE.md).
 
@@ -118,7 +118,7 @@ Escribano consumes Vespi's kernel and the agreement says it does not modify it. 
 
 Escribano does not submit documents to Wyoming, amend filed articles, confer DAO status, create a legal entity, deploy a contract, write to a blockchain, or produce a deposit with legal effect. The agreement cites Wyoming W.S. 17-31 as a reference for the shape of a record with an identifier and update history. It does not claim legal compliance. The project has not been compared with an actual filing process or reviewed by a competent legal professional.
 
-The records and member names are synthetic. Approvals are local attestations, not cryptographic signatures. SHA-256 is unkeyed: someone who can rewrite the local file can recalculate its digest, so it does not prove authenticity or time of creation. There is no blockchain or testnet anchor; the receipt anchor is described as `pending`. The supplied run of 2026-10-09 passes its 13 tests, and readiness for use is not established. More detail is in [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
+The records and member names are synthetic. Approvals are local attestations, not cryptographic signatures. SHA-256 is unkeyed: someone who can rewrite the local file can recalculate its digest, so it does not prove authenticity or time of creation. There is no blockchain or testnet anchor; the receipt anchor is described as `pending`. The supplied run of 2026-10-11 passes its 13 tests, and readiness for use is not established. More detail is in [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
 
 ### How to review this project
 
@@ -179,7 +179,7 @@ node src/cli.js historial
 node src/cli.js auditar
 ```
 
-Las reglas del proyecto indican que la primera decisión no alcanza el umbral de tres miembros y deja la propuesta pendiente. La corrida proporcionada del 2026-10-09 registra este caso como aprobado: la prueba `1. un cambio sin quórum no entra, y vuelve con la salida que lo dice`. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3); esa re-fijación ya está hecha. El código y las pruebas están en este repositorio: ejecuta `npm test` con Node 24 para repetir la suite.
+Las reglas del proyecto indican que la primera decisión no alcanza el umbral de tres miembros y deja la propuesta pendiente. La corrida proporcionada del 2026-10-11 registra este caso como aprobado: la prueba `1. un cambio sin quórum no entra, y vuelve con la salida que lo dice`. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3); esa re-fijación ya está hecha. El código y las pruebas están en este repositorio: ejecuta `npm test` con Node 24 para repetir la suite.
 
 ### Por qué Escribano
 
@@ -189,7 +189,7 @@ Las reglas del proyecto indican que la primera decisión no alcanza el umbral de
 | Ver quién contó para un cambio | Un modelo que cuenta miembros distintos con autoridad vigente, no varias atestaciones de una identidad | [Cómo funciona](./docs/HOW_IT_WORKS.md) |
 | Saber qué límites tiene la autoridad | Reglas de presupuesto, vencimiento, origen, delegación y revocación | [Cómo funciona](./docs/HOW_IT_WORKS.md) |
 | Distinguir una revisión del registro de una prueba de identidad | Un modelo de verificación separado y los límites de un digest sin clave | [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) |
-| Saber qué se probó y qué cubre | Nombres de pruebas, la captura del 2026-10-09 y el resultado registrado de cada caso | [Evidencia](./docs/EVIDENCE.md) |
+| Saber qué se probó y qué cubre | Nombres de pruebas, la captura del 2026-10-11 y el resultado registrado de cada caso | [Evidencia](./docs/EVIDENCE.md) |
 
 ### Cómo funciona
 
@@ -225,7 +225,7 @@ Escribano no es una presentación legal, un registro jurídico, un contrato inte
 
 ### Evidencia que puedes abrir
 
-La corrida proporcionada del 2026-10-09 informa **13 pruebas, todas aprobadas y ninguna omitida** sobre Node v24.15.0. Corrió `node --test test/*.test.js` en un clon limpio del proyecto, con HOME vacío y sin red. El núcleo es Vespi **0.1.6**, commit `95f2d61`, copiado dentro del proyecto en `vendor/vespi-kernel`, y la suite verifica esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3); esa re-fijación ya está hecha.
+La corrida proporcionada del 2026-10-11 informa **13 pruebas, todas aprobadas y ninguna omitida** sobre Node v24.15.0. Corrió `node --test test/*.test.js` en un clon limpio del proyecto, con HOME vacío y sin red. El núcleo es Vespi **0.1.6**, commit `95f2d61`, copiado dentro del proyecto en `vendor/vespi-kernel`, y la suite verifica esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3); esa re-fijación ya está hecha.
 
 Las ocho aserciones adversariales pasan en esta corrida: el detalle del quórum insuficiente, el detalle del miembro revocado, la idempotencia de un cambio repetido, la lectura de una versión anterior, la detección de historial alterado, la autorización vencida, los límites de presupuesto delegado y dejar pendiente una propuesta sin quórum. El registro de fases dice que los ocho casos se escribieron primero y se observaron en rojo antes de implementar. [Evidencia](./docs/EVIDENCE.md) conserva sus nombres y resultados registrados.
 
@@ -241,7 +241,7 @@ Escribano consume el núcleo de Vespi y, según el acuerdo, no lo modifica. El d
 
 Escribano no presenta documentos en Wyoming, no enmienda artículos depositados, no confiere condición de DAO, no crea una persona jurídica, no despliega contratos, no escribe en una blockchain ni produce un depósito con efecto legal. El acuerdo cita Wyoming W.S. 17-31 como referencia para la forma de un registro con identificador e historial de actualizaciones. No afirma cumplimiento legal. El proyecto no se ha comparado con un proceso real de presentación ni lo ha revisado una persona competente en derecho.
 
-Los registros y nombres de miembros son sintéticos. Las aprobaciones son atestaciones locales, no firmas criptográficas. SHA-256 no usa una clave: quien pueda reescribir el archivo local también puede recalcular su digest, por lo que no prueba autenticidad ni fecha de creación. No hay anclaje en blockchain ni testnet; el anclaje del recibo figura como `pending`. La corrida proporcionada del 2026-10-09 aprueba sus 13 pruebas, y no se ha establecido que el proyecto esté listo para usarse. Hay más detalle en [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md).
+Los registros y nombres de miembros son sintéticos. Las aprobaciones son atestaciones locales, no firmas criptográficas. SHA-256 no usa una clave: quien pueda reescribir el archivo local también puede recalcular su digest, por lo que no prueba autenticidad ni fecha de creación. No hay anclaje en blockchain ni testnet; el anclaje del recibo figura como `pending`. La corrida proporcionada del 2026-10-11 aprueba sus 13 pruebas, y no se ha establecido que el proyecto esté listo para usarse. Hay más detalle en [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md).
 
 ### Cómo revisar el proyecto
 

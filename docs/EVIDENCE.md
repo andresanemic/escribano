@@ -2,7 +2,7 @@
 
 ## Current result
 
-The supplied run dated 2026-10-09 reports **13 tests, all passing and none skipped** on Node v24.15.0. The capture, kept at [`suite-2026-10-09.txt`](./suite-2026-10-09.txt), is the reference for these counts and these test names. The public repository contains the test files and source code under the review-only license, so the run can be repeated from this checkout with `npm test`.
+The supplied run dated 2026-10-11 reports **13 tests, all passing and none skipped** on Node v24.15.0. The capture, kept at [`suite-2026-10-11.txt`](./suite-2026-10-11.txt), is the reference for these counts and these test names. The public repository contains the test files and source code under the review-only license, so the run can be repeated from this checkout with `npm test`.
 
 The run executed `node --test test/*.test.js` in a clean clone of the private project with an empty HOME and no network. The kernel is Vespi 0.1.6, commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`, copied into the project at `vendor/vespi-kernel`; the kernel-boundary checks compare that copy against its `SOURCE.md`, module by module and commit by commit.
 
@@ -37,7 +37,7 @@ The project phase record says these eight cases were written first and each was 
 | `7. un miembro no autoriza por encima de su presupuesto delegado` | Pass | A member does not authorize above their delegated budget. |
 | `8. un cambio que nunca alcanza las firmas queda pendiente, con su motivo` | Pass | A change that never reaches the signatures stays pending, with its reason. |
 
-These results describe what the assertions observed in the supplied run of 2026-10-09 against the vendored Vespi 0.1.6 copy. They cover only the behavior these cases exercise; they do not establish that Escribano is ready for use. The source code and test files are not in this public repository.
+These results describe what the assertions observed in the supplied run of 2026-10-11 against the vendored Vespi 0.1.6 copy. They cover only the behavior these cases exercise; they do not establish that Escribano is ready for use. The source code and test files are not in this public repository.
 
 ## What the earlier project phase establishes
 
@@ -47,13 +47,13 @@ The nine Vespi projects with code were recorded as built against that same earli
 
 ## Rerunning the suite
 
-The package manifest defines the test command as `node --test "test/*.test.js"`, and the source README documents the same suite command. The project says it has no dependencies to install and is run on Node 24; the supplied run used Node v24.15.0. The code is in this repository under the review-only license, which permits reading and cloning for evaluation but not modification or redistribution. From the project root, run `npm test` on Node 24; the suite should report the same count as the reference capture in [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 tests, all passing, none skipped.
+The package manifest defines the test command as `node --test "test/*.test.js"`, and the source README documents the same suite command. The project says it has no dependencies to install and is run on Node 24; the supplied run used Node v24.15.0. The code is in this repository under the review-only license, which permits reading and cloning for evaluation but not modification or redistribution. From the project root, run `npm test` on Node 24; the suite should report the same count as the reference capture in [`suite-2026-10-11.txt`](./suite-2026-10-11.txt): 13 tests, all passing, none skipped.
 
 # Español
 
 ## Resultado actual
 
-La corrida proporcionada del 2026-10-09 informa **13 pruebas: 13 aprobadas, 0 omitidas** sobre Node v24.15.0. La captura, guardada en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt), es la referencia de estos conteos y de estos nombres de prueba. El repositorio público incluye los archivos de prueba y el código fuente bajo la licencia de solo revisión, por lo que se puede repetir desde esta copia con `npm test`.
+La corrida proporcionada del 2026-10-11 informa **13 pruebas: 13 aprobadas, 0 omitidas** sobre Node v24.15.0. La captura, guardada en [`suite-2026-10-11.txt`](./suite-2026-10-11.txt), es la referencia de estos conteos y de estos nombres de prueba. El repositorio público incluye los archivos de prueba y el código fuente bajo la licencia de solo revisión, por lo que se puede repetir desde esta copia con `npm test`.
 
 La corrida ejecutó `node --test test/*.test.js` en un clon limpio del proyecto privado, con HOME vacío y sin red. El núcleo es Vespi 0.1.6, commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`, copiado dentro del proyecto en `vendor/vespi-kernel`; las comprobaciones de frontera comparan esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit.
 
@@ -88,7 +88,7 @@ El registro de fases del proyecto dice que los ocho casos se escribieron primero
 | `7. un miembro no autoriza por encima de su presupuesto delegado` | Pasa | Un miembro no autoriza por encima de su presupuesto delegado. |
 | `8. un cambio que nunca alcanza las firmas queda pendiente, con su motivo` | Pasa | Un cambio que nunca alcanza las firmas sigue pendiente, con su motivo. |
 
-Estos resultados describen lo que observaron las aserciones en la corrida proporcionada del 2026-10-09 contra la copia vendorizada de Vespi 0.1.6. Cubren solo el comportamiento que ejercen estos casos; no establecen que Escribano esté listo para usarse. El código y las pruebas no están en este repositorio público.
+Estos resultados describen lo que observaron las aserciones en la corrida proporcionada del 2026-10-11 contra la copia vendorizada de Vespi 0.1.6. Cubren solo el comportamiento que ejercen estos casos; no establecen que Escribano esté listo para usarse. El código y las pruebas no están en este repositorio público.
 
 ## Qué establece la fase anterior del proyecto
 
@@ -98,4 +98,4 @@ El registro histórico dice que los nueve proyectos de Vespi con código se cons
 
 ## Cómo repetir la corrida
 
-El manifiesto del paquete define el comando de pruebas como `node --test "test/*.test.js"`, y el README fuente documenta el mismo comando para la suite. El proyecto dice que no requiere instalar dependencias y que se ejecuta con Node 24; la corrida proporcionada usó Node v24.15.0. El código está en este repositorio bajo la licencia de solo revisión, que permite leer y clonar para evaluar, no modificar ni redistribuir. Desde la raíz del proyecto, ejecuta `npm test` con Node 24; la suite debe informar el mismo conteo que la captura de referencia en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt): 13 pruebas, todas aprobadas, ninguna omitida.
+El manifiesto del paquete define el comando de pruebas como `node --test "test/*.test.js"`, y el README fuente documenta el mismo comando para la suite. El proyecto dice que no requiere instalar dependencias y que se ejecuta con Node 24; la corrida proporcionada usó Node v24.15.0. El código está en este repositorio bajo la licencia de solo revisión, que permite leer y clonar para evaluar, no modificar ni redistribuir. Desde la raíz del proyecto, ejecuta `npm test` con Node 24; la suite debe informar el mismo conteo que la captura de referencia en [`suite-2026-10-11.txt`](./suite-2026-10-11.txt): 13 pruebas, todas aprobadas, ninguna omitida.

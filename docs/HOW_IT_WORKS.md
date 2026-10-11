@@ -63,7 +63,7 @@ An authorization is not a flat permission. It carries an allowed number of opera
 - Revocation stops future use; it does not rewrite the accepted history.
 - Narrowing the DAO's rules, such as raising quorum or reducing budgets, is allowed by the agreement's model. Expanding authority must go through the same contract-change quorum.
 
-The test snapshot supplied on 2026-10-09 passes its 13 cases, among them the expiry, delegated-budget, and under-quorum assertions. These statements describe different evidence: the rules are the intended model, while the test result shows what the recorded run covers.
+The test snapshot supplied on 2026-10-11 passes its 13 cases, among them the expiry, delegated-budget, and under-quorum assertions. These statements describe different evidence: the rules are the intended model, while the test result shows what the recorded run covers.
 
 ## What the record and receipt can show
 
@@ -144,7 +144,7 @@ Una autorización no es un permiso plano. Tiene un número de operaciones permit
 - Revocar impide usos futuros, pero no reescribe el historial aceptado.
 - Reducir las reglas de la DAO, por ejemplo elevar el quórum o bajar presupuestos, está permitido en el modelo del acuerdo. Ampliar autoridad debe pasar por el mismo quórum de cambio al contrato.
 
-La fotografía de pruebas proporcionada el 2026-10-09 aprueba sus 13 casos, entre ellos las aserciones de vencimiento, presupuesto delegado y propuesta sin quórum. Son tipos de evidencia distintos: las reglas describen el modelo previsto y el resultado de pruebas muestra lo que cubre la corrida registrada.
+La fotografía de pruebas proporcionada el 2026-10-11 aprueba sus 13 casos, entre ellos las aserciones de vencimiento, presupuesto delegado y propuesta sin quórum. Son tipos de evidencia distintos: las reglas describen el modelo previsto y el resultado de pruebas muestra lo que cubre la corrida registrada.
 
 ## Qué pueden mostrar el registro y el recibo
 
