@@ -13,7 +13,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { createHash } = require('node:crypto');
 
-// Los diez módulos del corte 0.1.5, incluida la procedencia completa de la copia.
+// Los diez módulos del corte 0.1.6, incluida la procedencia completa de la copia.
 // Runtime y suite fijan los mismos bytes.
 const MODULOS = [
   'authority.js',
@@ -28,8 +28,8 @@ const MODULOS = [
   'zk.js',
 ];
 
-// Lo que el corte declara para el kernel 0.1.5, commit
-// ed559e83c976dd6e6a379a5510db776206f670b4. Estos son los SHA-256 de los bytes que quedan tras
+// Lo que el corte declara para el kernel 0.1.6, commit
+// 95f2d614f4492056c8bb2cd951f08d1089027d4f. Estos son los SHA-256 de los bytes que quedan tras
 // quitar las tres líneas de encabezado de procedencia. Escritos aquí a mano y no leídos del
 // `SOURCE.md` instalado: leer la tabla que se está verificando sería verificar la tabla contra
 // sí misma.
@@ -40,7 +40,7 @@ const ESPERADOS = {
   'emergency.js': '73bd7199b4d8fbf373331bc7b75d9940cdd9896383739461252c2888f08a408c',
   'operation.js': '9a95815fc10435cb55415da1531e1545168eaf209518630b83f24b10f0e78d48',
   'receipt.js': 'd006eff3538b2c701366ba09d1e41a32d267b2bad44177f0095541ce9b2a644d',
-  'skill-provenance.js': 'd416956c0fc8ad04d1d3cca21c20c05046c3705701cd22e03447ffe9f509872b',
+  'skill-provenance.js': '06534ea203488621b8b8b498e9d1f00fd3d6db9d9bed650294dad2d4fa2122c5',
   'time.js': '3ed3565a3843b62341e61a2de405eab77b8218a37ac4ef1b41d49f4a4718502d',
   'x402.js': '63c6765b98c70758fad50859ae66df7833d300c93a961749df85b36aaf9282a2',
   'zk.js': 'e7885a6ceafe8665212323456b17fd5fac61c1907e361d17da31b56a051b9820',

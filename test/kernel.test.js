@@ -4,7 +4,7 @@
 //
 // Escribano consume la copia vendorizada del kernel que viaja en `vendor/vespi-kernel`, con su
 // `SOURCE.md` de procedencia. Estos diez digest fijan el corte
-// 0.1.5. Si el corte cambia, esta suite se pone roja **a propósito**: es el control funcionando,
+// 0.1.6. Si el corte cambia, esta suite se pone roja **a propósito**: es el control funcionando,
 // no una regresión. Reevaluar la huella es decisión de Andrés, no de este proyecto.
 
 const { test } = require('node:test');
@@ -15,10 +15,10 @@ const { createHash } = require('node:crypto');
 
 const { rutaNucleo, MODULOS, ESPERADOS } = require('../src/nucleo.js');
 
-// 0.1.5: el commit fijado que las cabeceras de la copia vendorizada declaran (forma corta) y que
+// 0.1.6: el commit fijado que las cabeceras de la copia vendorizada declaran (forma corta) y que
 // `vendor/vespi-kernel/SOURCE.md` documenta (forma completa).
-const COMMIT_CORTO = 'ed559e8';
-const COMMIT_FIJADO = 'ed559e83c976dd6e6a379a5510db776206f670b4';
+const COMMIT_CORTO = '95f2d61';
+const COMMIT_FIJADO = '95f2d614f4492056c8bb2cd951f08d1089027d4f';
 
 test('la copia del núcleo que Escribano consume es la vendorizada, y solo esa', () => {
   const r = rutaNucleo();
@@ -52,7 +52,7 @@ test('los diez encabezados declaran el mismo commit fijado', () => {
     commits.add(encontrado[1].slice(0, 7));
   }
   assert.equal(commits.size, 1, `los diez módulos no apuntan al mismo commit: ${[...commits].join(', ')}`);
-  // 0.1.5: el commit de la cabecera es el que SOURCE.md documenta; la cabecera trae la forma
+  // 0.1.6: el commit de la cabecera es el que SOURCE.md documenta; la cabecera trae la forma
   // corta y SOURCE.md la completa.
   assert.equal([...commits][0], COMMIT_CORTO, `el commit fijado cambió; SOURCE.md documenta ${COMMIT_FIJADO}`);
   assert.ok(COMMIT_FIJADO.startsWith([...commits][0]), `la cabecera no coincide con ${COMMIT_FIJADO}`);

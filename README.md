@@ -7,11 +7,12 @@
 <p align="center">
   <a href="#english"><img src="https://img.shields.io/badge/status-prototype-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: prototype"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-review--only-D7B698?style=for-the-badge&labelColor=07111A" alt="License: review only"></a>
-  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-13_of_13_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 13 of 13 tests pass"></a>
+  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-13_of_13_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 13 of 13 tests pass"></a> <b>It worked.</b>
   <a href="#english"><img src="https://img.shields.io/badge/agreement-written_before_code-E0C170?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
-  <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_release-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 release (commit ed559e8)"></a>
+  <a href="https://github.com/andresanemic/vespi/tree/95f2d614f4492056c8bb2cd951f08d1089027d4f"><img src="https://img.shields.io/badge/kernel-0.1.6_pin-95f2d61?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.6 source pin (commit 95f2d61)"></a>
 </p>
+
 
 <p align="center"><b>Escribano</b> — a public contract shows today's rule, not who changed it or which approvals counted.<br>
 Each change is checked separately and recorded. Evidence: 13/13 tests. Fictional data. Wyoming Statutes Title 17, Chapter 31 as design reference.</p>
@@ -101,7 +102,7 @@ Escribano is not a legal filing, a legal register, a deployed smart contract, a 
 
 ### Evidence you can open
 
-The supplied run dated 2026-10-09 reports **13 tests, all passing and none skipped** on Node v24.15.0. It ran `node --test test/*.test.js` in a clean clone of the project with an empty HOME and no network. The kernel is Vespi **0.1.5**, commit `ed559e8`, copied into the project at `vendor/vespi-kernel`, and the suite checks that copy against its `SOURCE.md`, module by module and commit by commit. An earlier capture, dated 2026-10-03, was red because the project was pinned to an older kernel cut (0.1.3); that re-pin is since done.
+The supplied run dated 2026-10-09 reports **13 tests, all passing and none skipped** on Node v24.15.0. It ran `node --test test/*.test.js` in a clean clone of the project with an empty HOME and no network. The kernel is Vespi **0.1.6**, commit `95f2d61`, copied into the project at `vendor/vespi-kernel`, and the suite checks that copy against its `SOURCE.md`, module by module and commit by commit. An earlier capture, dated 2026-10-03, was red because the project was pinned to an older kernel cut (0.1.3); that re-pin is since done.
 
 All eight adversarial assertions pass in this run: the missing-quorum detail, the revoked-member detail, identical-change idempotency, reading an older version, altered-history detection, expired authorization, delegated-budget limits, and leaving an under-quorum proposal pending. The phase record says all eight cases were written first and observed red before implementation. See the exact test names and recorded outcomes in [Evidence](./docs/EVIDENCE.md).
 
@@ -111,7 +112,7 @@ The public checkout contains no test files or source code, so this capture canno
 
 Escribano consumes Vespi's kernel and the agreement says it does not modify it. The documented design uses the kernel's authority checks, operation receipts, verification separate from execution, and continuity reconstructed from the record. Lore Plugin supplies the installed project context from which Escribano's kernel copy was selected. The current public checkout does not include code for an independent inspection of those integrations. [Vespi](https://github.com/andresanemic/vespi) is the kernel project; [Lore Plugin](https://github.com/andresanemic/lore-plugin) provides the host context described by the agreement.
 
-**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.5, in the pinned copy that Lore Plugin 2.5.1 distributes (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
+**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.6, in the pinned copy prepared for Lore Plugin 2.5.2 (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
 
 ### What it does not do, and what is not verified
 
@@ -139,6 +140,8 @@ Start with the agreement's model and the walkthrough in [How it works](./docs/HO
 <summary><b>Leer en español</b></summary>
 
 <a id="espanol"></a>
+
+<p align="center"><b>Funcionó.</b></p>
 
 **Escribano conserva un registro local y legible de cada cambio al contrato rector de una DAO ficticia.**
 
@@ -222,7 +225,7 @@ Escribano no es una presentación legal, un registro jurídico, un contrato inte
 
 ### Evidencia que puedes abrir
 
-La corrida proporcionada del 2026-10-09 informa **13 pruebas, todas aprobadas y ninguna omitida** sobre Node v24.15.0. Corrió `node --test test/*.test.js` en un clon limpio del proyecto, con HOME vacío y sin red. El núcleo es Vespi **0.1.5**, commit `ed559e8`, copiado dentro del proyecto en `vendor/vespi-kernel`, y la suite verifica esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3); esa re-fijación ya está hecha.
+La corrida proporcionada del 2026-10-09 informa **13 pruebas, todas aprobadas y ninguna omitida** sobre Node v24.15.0. Corrió `node --test test/*.test.js` en un clon limpio del proyecto, con HOME vacío y sin red. El núcleo es Vespi **0.1.6**, commit `95f2d61`, copiado dentro del proyecto en `vendor/vespi-kernel`, y la suite verifica esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3); esa re-fijación ya está hecha.
 
 Las ocho aserciones adversariales pasan en esta corrida: el detalle del quórum insuficiente, el detalle del miembro revocado, la idempotencia de un cambio repetido, la lectura de una versión anterior, la detección de historial alterado, la autorización vencida, los límites de presupuesto delegado y dejar pendiente una propuesta sin quórum. El registro de fases dice que los ocho casos se escribieron primero y se observaron en rojo antes de implementar. [Evidencia](./docs/EVIDENCE.md) conserva sus nombres y resultados registrados.
 
@@ -232,7 +235,7 @@ La copia pública no incluye los archivos de pruebas ni el código, así que no 
 
 Escribano consume el núcleo de Vespi y, según el acuerdo, no lo modifica. El diseño documentado usa las comprobaciones de autoridad del núcleo, recibos de operaciones, verificación separada de la ejecución y continuidad reconstruida desde el registro. Lore Plugin aporta el contexto instalado del que se seleccionó la copia del núcleo. El código de esas integraciones está en este repositorio, en `src/`, para inspeccionarlo por cuenta propia. [Vespi](https://github.com/andresanemic/vespi) es el proyecto del núcleo; [Lore Plugin](https://github.com/andresanemic/lore-plugin) aporta el contexto de hosts descrito en el acuerdo.
 
-**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.5, en la copia fijada que distribuye Lore Plugin 2.5.1 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
+**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.6, en la copia fijada para Lore Plugin 2.5.2 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
 ### Qué no hace y qué no está verificado
 

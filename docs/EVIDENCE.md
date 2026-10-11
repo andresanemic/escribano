@@ -4,11 +4,11 @@
 
 The supplied run dated 2026-10-09 reports **13 tests, all passing and none skipped** on Node v24.15.0. The capture, kept at [`suite-2026-10-09.txt`](./suite-2026-10-09.txt), is the reference for these counts and these test names. The public repository contains the test files and source code under the review-only license, so the run can be repeated from this checkout with `npm test`.
 
-The run executed `node --test test/*.test.js` in a clean clone of the private project with an empty HOME and no network. The kernel is Vespi 0.1.5, commit `ed559e83c976dd6e6a379a5510db776206f670b4`, copied into the project at `vendor/vespi-kernel`; the kernel-boundary checks compare that copy against its `SOURCE.md`, module by module and commit by commit.
+The run executed `node --test test/*.test.js` in a clean clone of the private project with an empty HOME and no network. The kernel is Vespi 0.1.6, commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`, copied into the project at `vendor/vespi-kernel`; the kernel-boundary checks compare that copy against its `SOURCE.md`, module by module and commit by commit.
 
 ### Why the earlier capture was red
 
-The earlier capture, dated 2026-10-03, was red because the project was pinned to an older kernel cut (0.1.3). That re-pin is now done: this run checks the vendored 0.1.5 copy against its own `SOURCE.md`, and every check in it passes. The earlier result is kept here as history; it is not the current state.
+The earlier capture, dated 2026-10-03, was red because the project was pinned to an older kernel cut (0.1.3). That re-pin is now done: this run checks the vendored 0.1.6 copy against its own `SOURCE.md`, and every check in it passes. The earlier result is kept here as history; it is not the current state.
 
 ## The 13 tests
 
@@ -37,11 +37,11 @@ The project phase record says these eight cases were written first and each was 
 | `7. un miembro no autoriza por encima de su presupuesto delegado` | Pass | A member does not authorize above their delegated budget. |
 | `8. un cambio que nunca alcanza las firmas queda pendiente, con su motivo` | Pass | A change that never reaches the signatures stays pending, with its reason. |
 
-These results describe what the assertions observed in the supplied run of 2026-10-09 against the vendored Vespi 0.1.5 copy. They cover only the behavior these cases exercise; they do not establish that Escribano is ready for use. The source code and test files are not in this public repository.
+These results describe what the assertions observed in the supplied run of 2026-10-09 against the vendored Vespi 0.1.6 copy. They cover only the behavior these cases exercise; they do not establish that Escribano is ready for use. The source code and test files are not in this public repository.
 
 ## What the earlier project phase establishes
 
-The project phase record states that the written agreement preceded implementation, the eight adversarial cases were written first and observed red, and a complete terminal walkthrough was built. It also records the kernel cut installed at that time (Lore Plugin 2.4.9-rc.5, candidate kernel 0.1.3) with module digests fixed by the project tests; the 2026-10-03 capture was red against that cut, and the project has since re-pinned to 0.1.5. These are project phase records, not source artifacts that can be independently inspected in this checkout.
+The project phase record states that the written agreement preceded implementation, the eight adversarial cases were written first and observed red, and a complete terminal walkthrough was built. It also records the kernel cut installed at that time (Lore Plugin 2.4.9-rc.5, candidate kernel 0.1.3) with module digests fixed by the project tests; the 2026-10-03 capture was red against that cut, and the project has since re-pinned to 0.1.6. These are project phase records, not source artifacts that can be independently inspected in this checkout.
 
 The nine Vespi projects with code were recorded as built against that same earlier cut on 2026-09-29, with green suites at that cut. That historical record does not mean their suites are green against the installed kernel today. No Escribano testnet transactions or chain receipts are claimed.
 
@@ -55,11 +55,11 @@ The package manifest defines the test command as `node --test "test/*.test.js"`,
 
 La corrida proporcionada del 2026-10-09 informa **13 pruebas: 13 aprobadas, 0 omitidas** sobre Node v24.15.0. La captura, guardada en [`suite-2026-10-09.txt`](./suite-2026-10-09.txt), es la referencia de estos conteos y de estos nombres de prueba. El repositorio público incluye los archivos de prueba y el código fuente bajo la licencia de solo revisión, por lo que se puede repetir desde esta copia con `npm test`.
 
-La corrida ejecutó `node --test test/*.test.js` en un clon limpio del proyecto privado, con HOME vacío y sin red. El núcleo es Vespi 0.1.5, commit `ed559e83c976dd6e6a379a5510db776206f670b4`, copiado dentro del proyecto en `vendor/vespi-kernel`; las comprobaciones de frontera comparan esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit.
+La corrida ejecutó `node --test test/*.test.js` en un clon limpio del proyecto privado, con HOME vacío y sin red. El núcleo es Vespi 0.1.6, commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`, copiado dentro del proyecto en `vendor/vespi-kernel`; las comprobaciones de frontera comparan esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit.
 
 ### Por qué la captura anterior estaba en rojo
 
-La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3). Esa re-fijación ya está hecha: esta corrida comprueba la copia vendorizada de 0.1.5 contra su propio `SOURCE.md`, y todas las comprobaciones pasan. El resultado anterior se conserva como historial; no es el estado actual.
+La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3). Esa re-fijación ya está hecha: esta corrida comprueba la copia vendorizada de 0.1.6 contra su propio `SOURCE.md`, y todas las comprobaciones pasan. El resultado anterior se conserva como historial; no es el estado actual.
 
 ## Las 13 pruebas
 
@@ -88,11 +88,11 @@ El registro de fases del proyecto dice que los ocho casos se escribieron primero
 | `7. un miembro no autoriza por encima de su presupuesto delegado` | Pasa | Un miembro no autoriza por encima de su presupuesto delegado. |
 | `8. un cambio que nunca alcanza las firmas queda pendiente, con su motivo` | Pasa | Un cambio que nunca alcanza las firmas sigue pendiente, con su motivo. |
 
-Estos resultados describen lo que observaron las aserciones en la corrida proporcionada del 2026-10-09 contra la copia vendorizada de Vespi 0.1.5. Cubren solo el comportamiento que ejercen estos casos; no establecen que Escribano esté listo para usarse. El código y las pruebas no están en este repositorio público.
+Estos resultados describen lo que observaron las aserciones en la corrida proporcionada del 2026-10-09 contra la copia vendorizada de Vespi 0.1.6. Cubren solo el comportamiento que ejercen estos casos; no establecen que Escribano esté listo para usarse. El código y las pruebas no están en este repositorio público.
 
 ## Qué establece la fase anterior del proyecto
 
-El registro de fases del proyecto dice que el acuerdo escrito precedió a la implementación, que los ocho casos adversariales se escribieron primero y se observaron en rojo, y que se construyó un recorrido completo por terminal. También registra el corte del núcleo instalado en ese momento (Lore Plugin 2.4.9-rc.5, núcleo candidato 0.1.3) con digests de módulos fijados por las pruebas del proyecto; la captura del 2026-10-03 quedó en rojo contra ese corte, y el proyecto ya re-fijó el núcleo a 0.1.5. Son registros de fase del proyecto, no artefactos de código que se puedan inspeccionar por separado en esta copia.
+El registro de fases del proyecto dice que el acuerdo escrito precedió a la implementación, que los ocho casos adversariales se escribieron primero y se observaron en rojo, y que se construyó un recorrido completo por terminal. También registra el corte del núcleo instalado en ese momento (Lore Plugin 2.4.9-rc.5, núcleo candidato 0.1.3) con digests de módulos fijados por las pruebas del proyecto; la captura del 2026-10-03 quedó en rojo contra ese corte, y el proyecto ya re-fijó el núcleo a 0.1.6. Son registros de fase del proyecto, no artefactos de código que se puedan inspeccionar por separado en esta copia.
 
 El registro histórico dice que los nueve proyectos de Vespi con código se construyeron contra ese mismo corte anterior el 2026-09-29 y tenían suites verdes en ese corte. Ese antecedente no implica que sus suites estén verdes contra el núcleo instalado de hoy. No se afirman transacciones de Escribano en testnet ni recibos en cadena.
 
