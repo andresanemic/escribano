@@ -10,7 +10,7 @@
   <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-13_of_13_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 13 of 13 tests pass"></a> <b>It worked.</b>
   <a href="#english"><img src="https://img.shields.io/badge/agreement-written_before_code-E0C170?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
-  <a href="https://github.com/andresanemic/vespi/tree/98a33280fb35cb1fc7feda483e7dd57b97362c49"><img src="https://img.shields.io/badge/kernel-0.1.6_pin-98a3328?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.6 source pin (commit 98a3328)"></a>
+  <a href="https://github.com/andresanemic/vespi/tree/39d45733839d0a05f60248fc6e5b81c892c464f8"><img src="https://img.shields.io/badge/kernel-0.1.6_pin-39d4573?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.6 source pin (commit 39d4573)"></a>
 </p>
 
 
@@ -102,7 +102,7 @@ Escribano is not a legal filing, a legal register, a deployed smart contract, a 
 
 ### Evidence you can open
 
-The supplied run dated 2026-10-11 reports **13 tests, all passing and none skipped** on Node v24.15.0. It ran `node --test test/*.test.js` in a clean clone of the project with an empty HOME and no network. The kernel is Vespi **0.1.6**, commit `98a3328`, copied into the project at `vendor/vespi-kernel`, and the suite checks that copy against its `SOURCE.md`, module by module and commit by commit. An earlier capture, dated 2026-10-03, was red because the project was pinned to an older kernel cut (0.1.3); that re-pin is since done.
+The supplied run dated 2026-10-11 reports **13 tests, all passing and none skipped** on Node v24.15.0. It ran `node --test test/*.test.js` in a clean clone of the project with an empty HOME and no network. The kernel is Vespi **0.1.6**, commit `39d4573`, copied into the project at `vendor/vespi-kernel`, and the suite checks that copy against its `SOURCE.md`, module by module and commit by commit. An earlier capture, dated 2026-10-03, was red because the project was pinned to an older kernel cut (0.1.3); that re-pin is since done.
 
 All eight adversarial assertions pass in this run: the missing-quorum detail, the revoked-member detail, identical-change idempotency, reading an older version, altered-history detection, expired authorization, delegated-budget limits, and leaving an under-quorum proposal pending. The phase record says all eight cases were written first and observed red before implementation. See the exact test names and recorded outcomes in [Evidence](./docs/EVIDENCE.md).
 
@@ -228,7 +228,7 @@ Escribano no es una presentación legal, un registro jurídico, un contrato inte
 
 ### Evidencia que puedes abrir
 
-La corrida proporcionada del 2026-10-11 informa **13 pruebas, todas aprobadas y ninguna omitida** sobre Node v24.15.0. Corrió `node --test test/*.test.js` en un clon limpio del proyecto, con HOME vacío y sin red. El núcleo es Vespi **0.1.6**, commit `98a3328`, copiado dentro del proyecto en `vendor/vespi-kernel`, y la suite verifica esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3); esa re-fijación ya está hecha.
+La corrida proporcionada del 2026-10-11 informa **13 pruebas, todas aprobadas y ninguna omitida** sobre Node v24.15.0. Corrió `node --test test/*.test.js` en un clon limpio del proyecto, con HOME vacío y sin red. El núcleo es Vespi **0.1.6**, commit `39d4573`, copiado dentro del proyecto en `vendor/vespi-kernel`, y la suite verifica esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto estaba fijado a un corte anterior del núcleo (0.1.3); esa re-fijación ya está hecha.
 
 Las ocho aserciones adversariales pasan en esta corrida: el detalle del quórum insuficiente, el detalle del miembro revocado, la idempotencia de un cambio repetido, la lectura de una versión anterior, la detección de historial alterado, la autorización vencida, los límites de presupuesto delegado y dejar pendiente una propuesta sin quórum. El registro de fases dice que los ocho casos se escribieron primero y se observaron en rojo antes de implementar. [Evidencia](./docs/EVIDENCE.md) conserva sus nombres y resultados registrados.
 

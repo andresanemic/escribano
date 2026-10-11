@@ -4,7 +4,7 @@
 
 The supplied run dated 2026-10-11 reports **13 tests, all passing and none skipped** on Node v24.15.0. The capture, kept at [`suite-2026-10-11.txt`](./suite-2026-10-11.txt), is the reference for these counts and these test names. The public repository contains the test files and source code under the review-only license, so the run can be repeated from this checkout with `npm test`.
 
-The run executed `node --test test/*.test.js` in a clean clone of the private project with an empty HOME and no network. The kernel is Vespi 0.1.6, commit `98a33280fb35cb1fc7feda483e7dd57b97362c49`, copied into the project at `vendor/vespi-kernel`; the kernel-boundary checks compare that copy against its `SOURCE.md`, module by module and commit by commit.
+The run executed `node --test test/*.test.js` in a clean clone of the private project with an empty HOME and no network. The kernel is Vespi 0.1.6, commit `39d45733839d0a05f60248fc6e5b81c892c464f8`, copied into the project at `vendor/vespi-kernel`; the kernel-boundary checks compare that copy against its `SOURCE.md`, module by module and commit by commit.
 
 ### Why the earlier capture was red
 
@@ -55,7 +55,7 @@ The package manifest defines the test command as `node --test "test/*.test.js"`,
 
 La corrida proporcionada del 2026-10-11 informa **13 pruebas: 13 aprobadas, 0 omitidas** sobre Node v24.15.0. La captura, guardada en [`suite-2026-10-11.txt`](./suite-2026-10-11.txt), es la referencia de estos conteos y de estos nombres de prueba. El repositorio público incluye los archivos de prueba y el código fuente bajo la licencia de solo revisión, por lo que se puede repetir desde esta copia con `npm test`.
 
-La corrida ejecutó `node --test test/*.test.js` en un clon limpio del proyecto privado, con HOME vacío y sin red. El núcleo es Vespi 0.1.6, commit `98a33280fb35cb1fc7feda483e7dd57b97362c49`, copiado dentro del proyecto en `vendor/vespi-kernel`; las comprobaciones de frontera comparan esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit.
+La corrida ejecutó `node --test test/*.test.js` en un clon limpio del proyecto privado, con HOME vacío y sin red. El núcleo es Vespi 0.1.6, commit `39d45733839d0a05f60248fc6e5b81c892c464f8`, copiado dentro del proyecto en `vendor/vespi-kernel`; las comprobaciones de frontera comparan esa copia contra su `SOURCE.md`, módulo por módulo y commit por commit.
 
 ### Por qué la captura anterior estaba en rojo
 
