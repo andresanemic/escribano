@@ -17,8 +17,8 @@ const { rutaNucleo, MODULOS, ESPERADOS } = require('../src/nucleo.js');
 
 // 0.1.6: el commit fijado que las cabeceras de la copia vendorizada declaran (forma corta) y que
 // `vendor/vespi-kernel/SOURCE.md` documenta (forma completa).
-const COMMIT_CORTO = '7767daa';
-const COMMIT_FIJADO = '7767daa369e464b486ddf16b08b8985e59ec107d';
+const COMMIT_CORTO = '98a3328';
+const COMMIT_FIJADO = '98a33280fb35cb1fc7feda483e7dd57b97362c49';
 
 test('la copia del núcleo que Escribano consume es la vendorizada, y solo esa', () => {
   const r = rutaNucleo();

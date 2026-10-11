@@ -29,7 +29,7 @@ const MODULOS = [
 ];
 
 // Lo que el corte declara para el kernel 0.1.6, commit
-// 7767daa369e464b486ddf16b08b8985e59ec107d. Estos son los SHA-256 de los bytes que quedan tras
+// 98a33280fb35cb1fc7feda483e7dd57b97362c49. Estos son los SHA-256 de los bytes que quedan tras
 // quitar las tres líneas de encabezado de procedencia. Escritos aquí a mano y no leídos del
 // `SOURCE.md` instalado: leer la tabla que se está verificando sería verificar la tabla contra
 // sí misma.
