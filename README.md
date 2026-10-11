@@ -116,6 +116,9 @@ Escribano consumes Vespi's kernel and the agreement says it does not modify it. 
 
 ### What it does not do, and what is not verified
 
+Review status: this project has not been audited. The Vespi kernel it runs on has had superreviews with Claude Code and no independent external security audit.
+
+
 Escribano does not submit documents to Wyoming, amend filed articles, confer DAO status, create a legal entity, deploy a contract, write to a blockchain, or produce a deposit with legal effect. The agreement cites Wyoming W.S. 17-31 as a reference for the shape of a record with an identifier and update history. It does not claim legal compliance. The project has not been compared with an actual filing process or reviewed by a competent legal professional.
 
 The records and member names are synthetic. Approvals are local attestations, not cryptographic signatures. SHA-256 is unkeyed: someone who can rewrite the local file can recalculate its digest, so it does not prove authenticity or time of creation. There is no blockchain or testnet anchor; the receipt anchor is described as `pending`. The supplied run of 2026-10-11 passes its 13 tests, and readiness for use is not established. More detail is in [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
@@ -238,6 +241,9 @@ Escribano consume el núcleo de Vespi y, según el acuerdo, no lo modifica. El d
 **Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.6, en la copia fijada para Lore Plugin 2.5.2 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
 ### Qué no hace y qué no está verificado
+
+Estado de revisión: este proyecto no ha sido auditado. El kernel de Vespi sobre el que corre ha tenido superreviews con Claude Code y ninguna auditoría de seguridad externa independiente.
+
 
 Escribano no presenta documentos en Wyoming, no enmienda artículos depositados, no confiere condición de DAO, no crea una persona jurídica, no despliega contratos, no escribe en una blockchain ni produce un depósito con efecto legal. El acuerdo cita Wyoming W.S. 17-31 como referencia para la forma de un registro con identificador e historial de actualizaciones. No afirma cumplimiento legal. El proyecto no se ha comparado con un proceso real de presentación ni lo ha revisado una persona competente en derecho.
 
