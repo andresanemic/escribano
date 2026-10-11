@@ -1,21 +1,21 @@
 Suite capture — escribano — 2026-10-11
-Command: node --test test/*.test.js (clean clone of commit 6b8c2fe, empty HOME, no network)
-Node: v24.15.0 · Kernel: Vespi 0.1.6, commit 98a33280fb35cb1fc7feda483e7dd57b97362c49, copied in vendor/vespi-kernel
+Command: node --test test/*.test.js (clean clone of commit 9f56e16, empty HOME, no network)
+Node: v24.15.0 · Kernel: Vespi 0.1.6, commit 39d45733839d0a05f60248fc6e5b81c892c464f8, copied in vendor/vespi-kernel
 Summary: tests 13 pass 13 fail 0 cancelled 0 skipped 0 todo 0 
 
-✔ la copia del núcleo que Escribano consume es la vendorizada, y solo esa (141.6042ms)
-✔ el núcleo es el corte fijado, módulo por módulo (3.6074ms)
-✔ los diez encabezados declaran el mismo commit fijado (4.4104ms)
-✔ el SOURCE.md vendido declara los mismos diez módulos que este proyecto espera (2.6197ms)
-✔ lo que el núcleo exporta es lo que este proyecto usa, y existe (5.6902ms)
-✔ 1. un cambio sin quórum no entra, y vuelve con la salida que lo dice (25.5855ms)
-✔ 2. la firma de un miembro revocado no cuenta, y el rechazo lo nombra (20.2682ms)
-✔ 3. el mismo cambio dos veces es un cambio: una entrada, el mismo sello (40.0881ms)
-✔ 4. un historial alterado a mano rompe la cadena y la auditoría lo dice (31.1754ms)
-✔ 5. con una versión nueva, la versión vieja se lee igual y se dice que no es la vigente (33.6526ms)
-✔ 6. con el reloj vencido la autorización se niega, y dice cuándo venció (11.0644ms)
-✔ 7. un miembro no autoriza por encima de su presupuesto delegado (14.1764ms)
-✔ 8. un cambio que nunca alcanza las firmas queda pendiente, con su motivo (11.1483ms)
+✔ la copia del núcleo que Escribano consume es la vendorizada, y solo esa (154.7095ms)
+✔ el núcleo es el corte fijado, módulo por módulo (3.5295ms)
+✔ los diez encabezados declaran el mismo commit fijado (5.4952ms)
+✔ el SOURCE.md vendido declara los mismos diez módulos que este proyecto espera (2.8597ms)
+✔ lo que el núcleo exporta es lo que este proyecto usa, y existe (5.8743ms)
+✔ 1. un cambio sin quórum no entra, y vuelve con la salida que lo dice (31.0415ms)
+✔ 2. la firma de un miembro revocado no cuenta, y el rechazo lo nombra (25.4719ms)
+✔ 3. el mismo cambio dos veces es un cambio: una entrada, el mismo sello (46.5004ms)
+✔ 4. un historial alterado a mano rompe la cadena y la auditoría lo dice (36.4841ms)
+✔ 5. con una versión nueva, la versión vieja se lee igual y se dice que no es la vigente (43.5565ms)
+✔ 6. con el reloj vencido la autorización se niega, y dice cuándo venció (11.7684ms)
+✔ 7. un miembro no autoriza por encima de su presupuesto delegado (16.4236ms)
+✔ 8. un cambio que nunca alcanza las firmas queda pendiente, con su motivo (12.8587ms)
 ℹ tests 13
 ℹ suites 0
 ℹ pass 13
@@ -23,4 +23,4 @@ Summary: tests 13 pass 13 fail 0 cancelled 0 skipped 0 todo 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 418.4286
+ℹ duration_ms 514.8468
