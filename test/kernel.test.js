@@ -3,8 +3,8 @@
 // La frontera de versión de Escribano, verificada por bytes.
 //
 // Escribano consume la copia vendorizada del kernel que viaja en `vendor/vespi-kernel`, con su
-// `SOURCE.md` de procedencia. Estos diez digest fijan el corte
-// 0.1.6. Si el corte cambia, esta suite se pone roja **a propósito**: es el control funcionando,
+// `SOURCE.md` de procedencia. Estos doce digest fijan el corte
+// 0.1.8. Si el corte cambia, esta suite se pone roja **a propósito**: es el control funcionando,
 // no una regresión. Reevaluar la huella es decisión de Andrés, no de este proyecto.
 
 const { test } = require('node:test');
@@ -15,10 +15,10 @@ const { createHash } = require('node:crypto');
 
 const { rutaNucleo, MODULOS, ESPERADOS } = require('../src/nucleo.js');
 
-// 0.1.6: el commit fijado que las cabeceras de la copia vendorizada declaran (forma corta) y que
+// 0.1.8: el commit fijado que las cabeceras de la copia vendorizada declaran (forma corta) y que
 // `vendor/vespi-kernel/SOURCE.md` documenta (forma completa).
-const COMMIT_CORTO = '39d4573';
-const COMMIT_FIJADO = '39d45733839d0a05f60248fc6e5b81c892c464f8';
+const COMMIT_CORTO = '13dbe24';
+const COMMIT_FIJADO = '13dbe24310dab2a12eee26ad51dfdfddbff5458b';
 
 test('la copia del núcleo que Escribano consume es la vendorizada, y solo esa', () => {
   const r = rutaNucleo();
@@ -41,7 +41,7 @@ test('el núcleo es el corte fijado, módulo por módulo', () => {
   }
 });
 
-test('los diez encabezados declaran el mismo commit fijado', () => {
+test('los doce encabezados declaran el mismo commit fijado', () => {
   const r = rutaNucleo();
   const commits = new Set();
   for (const modulo of MODULOS) {
@@ -51,14 +51,14 @@ test('los diez encabezados declaran el mismo commit fijado', () => {
     assert.match(encabezado, /^\/\/ Vendored copy/m, `${modulo}: no es la copia vendorizada`);
     commits.add(encontrado[1].slice(0, 7));
   }
-  assert.equal(commits.size, 1, `los diez módulos no apuntan al mismo commit: ${[...commits].join(', ')}`);
-  // 0.1.6: el commit de la cabecera es el que SOURCE.md documenta; la cabecera trae la forma
+  assert.equal(commits.size, 1, `los doce módulos no apuntan al mismo commit: ${[...commits].join(', ')}`);
+  // 0.1.8: el commit de la cabecera es el que SOURCE.md documenta; la cabecera trae la forma
   // corta y SOURCE.md la completa.
   assert.equal([...commits][0], COMMIT_CORTO, `el commit fijado cambió; SOURCE.md documenta ${COMMIT_FIJADO}`);
   assert.ok(COMMIT_FIJADO.startsWith([...commits][0]), `la cabecera no coincide con ${COMMIT_FIJADO}`);
 });
 
-test('el SOURCE.md vendido declara los mismos diez módulos que este proyecto espera', () => {
+test('el SOURCE.md vendido declara los mismos doce módulos que este proyecto espera', () => {
   const r = rutaNucleo();
   const fuente = fs.readFileSync(path.join(r.ruta, 'SOURCE.md'), 'utf8');
   const declarados = [...fuente.matchAll(/^\|\s*\x60([^\x60]+\.js)\x60\s*\|\s*\x60([0-9a-f]{64})\x60\s*\|\s*(\d+)\s*\|$/gm)].map((m) => m[1]);

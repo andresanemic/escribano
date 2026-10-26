@@ -1,5 +1,7 @@
 # Evidence
 
+> **2026-10-26:** re-pinned to Vespi kernel 0.1.8 (release `v0.1.8-kernel`, commit `13dbe24`); [`suite-2026-10-26.txt`](./suite-2026-10-26.txt) reports 13 of 13 pass. The records below describe the 2026-10-11 capture. · **26 oct. 2026:** nueva fijación al kernel de Vespi 0.1.8; 13 de 13 aprobadas. Los registros de abajo describen la captura del 2026-10-11.
+
 ## Current result
 
 The supplied run dated 2026-10-11 reports **13 tests, all passing and none skipped** on Node v24.15.0. The capture, kept at [`suite-2026-10-11.txt`](./suite-2026-10-11.txt), is the reference for these counts and these test names. The public repository contains the test files and source code under the review-only license, so the run can be repeated from this checkout with `npm test`.
