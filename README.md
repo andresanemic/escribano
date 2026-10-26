@@ -17,7 +17,7 @@
 <p align="center"><b>Escribano</b> — a public contract shows today's rule, not who changed it or which approvals counted.<br>
 Each change is checked separately and recorded. Evidence: 13/13 tests. Fictional data. Wyoming Statutes Title 17, Chapter 31 as design reference.</p>
 
-<p align="center"><b>We submitted Vespi to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
+<p align="center"><b>Part of Vespi's HackMeridian 2026 submission, as evidence of what Vespi and Lore Plugin let a person build.</b></p>
 <p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./LICENSE">Review-only license</a>.<br>The source is in this repository: run <code>npm test</code> on Node 24.</p>
 
 These projects remain separate, runnable repositories. / Estos proyectos siguen siendo repositorios ejecutables por separado.
